@@ -1,37 +1,56 @@
-## Welcome to GitHub Pages
+# Sailor Hat with ESP32 (SH-ESP32)
 
-You can use the [editor on GitHub](https://github.com/hatlabs/sh-esp32/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Introduction
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+TODO: Describe SH-ESP32
 
-### Markdown
+## Getting the hardware
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+TODO: How to get the hardware
 
-```markdown
-Syntax highlighted code block
+## Assembling the hardware
 
-# Header 1
-## Header 2
-### Header 3
+TODO
 
-- Bulleted
-- List
+## Enclosures
 
-1. Numbered
-2. List
+TODO
 
-**Bold** and _Italic_ and `Code` text
+## Hardware description
 
-[Link](url) and ![Image](src)
-```
+### ESP32 module
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Power supply
 
-### Jekyll Themes
+### Peripherals
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/hatlabs/sh-esp32/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+#### Buttons and LEDs
 
-### Support or Contact
+#### USB
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+#### CAN bus (NMEA 2000)
+
+#### I2C
+
+#### 1-Wire
+
+#### Optocoupler input and output
+
+#### GPIO header
+
+#### Proto board area
+
+## Software
+
+### Required drivers
+
+### SDKs
+
+### Pinouts of peripherals
+
+### Application frameworks
+
+#### SensESP
+
+## Acknowledgments
+
