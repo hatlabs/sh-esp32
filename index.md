@@ -21,7 +21,7 @@ All design files are also available at the [SH-ESP32 hardware GitHub repository]
 
 # Assembling the hardware
 
-The hardware sold by Hat Labs is mostly unassembled.
+The SH-ESP32 boards sold by Hat Labs are mostly unassembled.
 Only the USB connector has been soldered on at delivery.
 You need to solder on the remaining connectors, or at least the ones you need.
 A set of connectors is provided in the sales package.
@@ -105,9 +105,18 @@ Usually you can first add solder to the connector pin cavity and then re-melt th
 
 # Hardware description
 
+TODO: Add an image with annotations for the different functional blocks
+
+TODO: Add an image with annotations for the different connectors
+
+TODO: Add an image with annotations for the solder jumpers and 0R resistors
+
 ## ESP32 module
 
+- Describe and provide links to ESP-WROOM-32
 ## Power supply
+
+- Describe the characteristics of the power supply
 
 ## Peripherals
 
@@ -131,15 +140,33 @@ Usually you can first add solder to the connector pin cavity and then re-melt th
 
 ## Required drivers
 
+- CH340C driver for Windows and Mac (Linux works as is)
+
 ## SDKs
+
+- Espressif
+- Arduino Framework
 
 ## Pinouts of peripherals
 
+- Describe silkscreen symbols
+- List pinouts
+
 ## Application frameworks
+
+- Describe options other than SensESP
 
 ### SensESP
 
+- Describe SensESP
+
 # Add-on boards
+
+* Describe Proto Board Top Hat
+* Describe other planned boards
+  * Digital switching
+  * Ethernet
+
 # Acknowledgments
 
 Matti Airas, the Mad Hatter and founder of Hat Labs Ltd, has initiated the project and done most of the initial hardware development and testing. Mark Farnan has done major contributions and hardware design improvements, including all add-on board designs. Karl-Erik Gustafsson has provided a lot of invaluable guidance, especially regarding electromagnetic compatibility design.
