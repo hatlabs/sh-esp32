@@ -162,13 +162,12 @@ The connectors are as follows:
 
 4. **1-Wire header**:
    1-Wire interface fitted with ESD protection and noise filtering as well as low-pass filtering required for longer networks.
-   1-Wire is commonly used for temperature sensors and similar simple sensing devices.
-   It is a relatively slow interface but allows for long networks.
-
+   
 5. **I2C header**:
-   I2C (Inter-Integrated Circuit) is a very popular synchronous serial communication bus commonly used for interfacing with a number of different ICs.
-   Maximum bus distances depend on the load, but should be less than 3-4 m, preferably
-   much less than that.
+   Four-pin header for connecting I2C slave devices to SH-ESP32.
+   A female header accepts many popular inexpensive OLED display modules using the SSD1306 driver as is.
+
+   There is also an unpopulated Qwiic-compatible JST SH footprint next to the 2.54 mm header.
 
 6. **USB**:
    This is your standard USB Micro B connector.
@@ -188,7 +187,7 @@ The connectors are as follows:
 
 11. **GPIO header**:
     The GPIO header provides connections to all GPIO pins available on the ESP32 module.
-    Some of the pins are by default used by other peripherals and need to be enabled
+    Some of the pins are used by other peripherals by default and need to be enabled
     using the solder jumpers.
 
 ![Connectors](media/sh-esp32_r0.3.1_top_conx_annotated.jpg "SH-ESP32 connectors")
@@ -246,62 +245,141 @@ The CAN interface uses ESP32's integrated CAN controller and the ISO1050DUB isol
 
 The CAN bus interface can also be used to power the whole device if there are no galvanic connections to other external systems. (FIXME: Needs a more thorough description and illustration.)
 
+The CAN interface includes a built-in termination resistor that can be enabled by closing the "CAN term" solder jumper on the bottom side of the board.
+
 ### I2C
+
+I2C (Inter-Integrated Circuit) is a very popular synchronous serial communication bus commonly used for interfacing with a number of different ICs.
+It uses two data wires in addition to voltage and ground.
+
+I2C can be used to connect a large number of devices to the SH-ESP32.
+Device types include analog-to-digital converters, attitude sensors, temperature and humidity sensors, displays, keypads, GPS, and so on.
+Any Qwiic-compatible board from SparkFun can be used with the SH-ESP32 by splicing the wires or by adding a JST SH compatible connector to the available footprint.
+
+Maximum I2C bus distances depend on the load, but should be less than 3-4 m. There are better suited protocols for long distance communication.
 
 ### 1-Wire
 
+1-Wire is a device communications bus system designed by Dallas Semiconductor, since acquired by Maxim Integrated Products.
+Although 1-Wire is a slow-speed protocol, supporting only speeds up to 16.3 kbps, it is very simple to implement and can be used over long distances. 
+It is commonly used for temperature sensors and similar simple sensing devices.
+
+The SH-ESP32 1-Wire implementation features ESD and RF noise filtering as well as low-pass filtering to improve network reliability.
+
 ### <a name="opto_io"></a>Optocoupler input and output
 
+Optocoupler input and output is the recommended way to add simple digital signal input and output and sensing to different external systems.
+It can be used e.g. to count alternator pulses for RPM measurement or switch relays on or off.
+
+Additionally, the SH-ESP32 opto I/O implementation should be able to drive slow-speed single-side NMEA 0183 interfaces.
+
 The absolute maximum voltage for the optocoupler input is 18V but it can be extended by adding an additional current-limiting resistor in series to the input.
-   It is possible to drive small automotive relays using the optocoupler output.
-   Additionally
-   
+
+For output purposes, operating voltage must be provided by the external circuitry.
+It is possible to drive small automotive relays using the optocoupler output. In that case, the solenoid pins should be connected to the Vext and OUT pins.
 
 ### GPIO header
 
+The GPIO header can be used to access all GPIO pins of the ESP32 module.
+The silkscreen labeling next to the header, shown in [Figure 3](#fig_gpio), refers to the GPIO numbers of the pins.
+
+![GPIO header](media/sh-esp32_r0.3.1_gpio.jpg "SH-ESP32 GPIO header labels")
+<a name="fig_gpio"></a>*Figure 3. SH-ESP32 GPIO header pinout.*
+
+Circled numbers are by default used by other peripherals and have to be connected by setting the solder jumpers (see Section "[Customizing GPIO assignments](#solder_jumpers)" for more information).
+
+The pin group including GPIOs 16 and 17 encapsulated by a rectangle can be used as duplicate I2C header if the respective solder jumpers are closed.
+
+The pin group with GPIOs 12-15 can be used as a JTAG connector with some [simple external hardware and software](http://openocd.org/doc/html/Debug-Adapter-Hardware.html).
+JTAG is an industry-standard debugging interface for microcontrollers and other programmable devices that allows on-chip debugging, including setting hardware breakpoints, stepping through code and inspecting live variable values.
+
+Finally, the pin group consisting of the 14 pins on the right end of the header will be used by an Ethernet add-on board.
+
+No ESD, RF noise protection or other filtering is provided for the GPIO header pins. 
+
 ### Proto board area
+
+The large open area in the middle of the SH-ESP32, shown in Figure 4, is the proto board area.
+It can be used to add new functionality via embedded 3rd party modules or THT circuitry.
+Layer fills or traces on the inner copper layers are on purpose avoiding the proto board area, and the area can be safely drilled or modified to accept larger components, if needed.
+There are traces very close to the area, however, so some care should be taken when modifying the pads at the border of the area.
+
+![Proto board area](media/sh-esp32_r0.3.1_gpio.jpg "SH-ESP32 proto board area")
+<a name="fig_proto_board"></a>*Figure 4. SH-ESP32 proto board area.*
 
 ## Pinouts of peripherals
 
-- Describe silkscreen symbols
-- List pinouts
+The ESP32 has a GPIO matrix that allows most of the digital GPIO functionality to be mapped freely to any GPIO. This is utilized extensively on SH-ESP32, and few peripherals are mapped to their standard pins. The GPIO pinout of different peripherals is given below. Unlisted pins are not used by SH-ESP32 and can be
+utilized freely.
 
-### Customizing GPIO assignments
+The GPIOs having a mark in the Jumper column are by default connected to the respective peripheral and disconnected from the GPIO header. These connections may be altered by modifying the jumpers as described in Section "[Customizing GPIO assignments](#solder_jumpers)".
 
+| GPIO # | Jumper | Function | Optional Function |
+| ------ | -------- |  |
+| 00 |   | BOOT | Ethernet REF_CLK |
+| 01 | x | Serial TXD0 |  |
+| 02 |   | Blue LED |  |
+| 03 | x | Serial RXD0 |  |
+| 04 | x | 1-Wire data |  |
+| 05 |   | Free | Ethernet Reset_N  |
+| 12 |   | Free | JTAG TDI |
+| 13 |   | Free | JTAG TCK |
+| 14 |   | Free | JTAG TMS |
+| 15 |   | Free | JTAG TDO |
+| 16 | x | I2C SDA |  |
+| 17 | x | I2C SCL |  |
+| 18 |  | Free | Ethernet MDIO |
+| 19 |  | Free | Ethernet TXD[0] |
+| 21 |  | Free | Ethernet TX_EN |
+| 22 |  | Free | Ethernet TXD[1] |
+| 25 |  | Free | Ethernet RXD[0] |
+| 26 |  | Free | Ethernet RXD[1] |
+| 27 |  | Free | Ethernet CRS_DV |
+| 32 | x | CAN TX |  |
+| 33 | x | Opto OUT |  |
+| 34 | x | CAN RX |  |
+| 35 | x | Opto IN |  |
 
+### <a name="solder_jumpers"></a>Customizing GPIO assignments
+
+Nearly all hard-wired peripherals can be disconnected by unsoldering a 0R resistor jumper on the board top layer.
+In a similar fashion, the solder jumpers on the bottom layer can be closed to connect the GPIO pin to the respective GPIO header pin.
+The resistor and solder jumpers are illustrated on Figures [5](#fig_top_jumpers) and [6](#fig_bottom_jumpers).
+
+For example, if don't need the CAN interface and want to reuse the GPIOs 32 and 34 on the GPIO header, desolder the resistors labeled 32 and 34 next to the ESP32 module to disconnect the module from the CAN interface.
+Then close the solder jumpers labeled 32 and 34 to connect the GPIO pins to the GPIO header.
+
+Likewise, if you want to enable I2C both on the GPIO header and the dedicated I2C connector, close the solder jumpers 16 and 17 on the board bottom layer.
 
 ![Jumpers, top](media/sh-esp32_r0.3.1_top_jumpers_annotated.jpg "SH-ESP32 jumpers on top side")
+<a name="fig_top_jumpers"></a>*Figure 5. Resistor jumpers on the top layer. To disconnect the GPIO pin from any peripheral, unsolder the respective jumper.*
 
 ![Jumpers, bottom](media/sh-esp32_r0.3.1_bottom_jumpers_annotated.jpg "SH-ESP32 jumpers on bottom side")
-
-
+<a name="fig_bottom_jumpers"></a>*Figure 6. Solder jumpers on the bottom layer. To connect a GPIO pin to the GPIO header, close the solder jumper by adding a blob of solder on top of the jumper area.*
 
 # Software
 
-## Required drivers
-
-- CH340C driver for Windows and Mac (Linux works as is)
-
 ## SDKs
 
-- Espressif
-- Arduino Framework
+- [Espressif SDK](https://www.espressif.com/en/products/software/esp-sdk/overview)
+- [Arduino Framework](https://github.com/espressif/arduino-esp32)
 
 ## Application frameworks
 
-- Describe options other than SensESP
+- Options other than SensESP
 
 ### SensESP
 
-- Describe SensESP
+- https://github.com/SignalK/SensESP
 
 # Add-on boards
 
-* Describe Proto Board Top Hat
-* Describe other planned boards
+* Proto Board Top HAT
+* Blank HAT
+* Other planned boards
   * Digital switching
   * Ethernet
 
 # Acknowledgments
 
-Matti Airas, the Mad Hatter and founder of Hat Labs Ltd, has initiated the project and done most of the initial hardware development and testing. Mark Farnan has done major contributions and hardware design improvements, including all add-on board designs. Karl-Erik Gustafsson has provided a lot of invaluable guidance, especially regarding electromagnetic compatibility design.
+Matti Airas, the Mad Hatter and founder of Hat Labs Ltd, initiated the project and has done most of the initial hardware development and testing. Mark Farnan has done major contributions and hardware design improvements, including all add-on board designs. Karl-Erik Gustafsson has provided a lot of invaluable guidance, especially regarding electromagnetic compatibility design.
