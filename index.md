@@ -324,8 +324,11 @@ It can be used to add new functionality via embedded 3rd party modules or THT ci
 Layer fills or traces on the inner copper layers are on purpose avoiding the proto board area, and the area can be safely drilled or modified to accept larger components, if needed.
 There are traces very close to the area, however, so some care should be taken when modifying the pads at the border of the area.
 
-![Proto board area](media/sh-esp32_r0.3.1_gpio.jpg "SH-ESP32 proto board area")
+![Proto board area](media/sh-esp32_r0.3.1_top_proto_area.jpg "SH-ESP32 proto board area")
 <a name="fig_proto_area"></a>*Figure 11. SH-ESP32 proto board area.*
+
+The round pins to the left hand side are horizontally connected and designed to make placing headers on the PCB edge easier.
+You can place a header on the row at the edge and make connections to the inner row of round pads.
 
 ## Pinouts of peripherals
 
