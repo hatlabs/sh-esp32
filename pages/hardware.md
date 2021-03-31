@@ -271,3 +271,5 @@ Then close the solder jumpers labeled 32 and 34 to connect the GPIO pins to the 
 Likewise, if you want to enable I2C both on the GPIO header and the dedicated I2C connector, close the solder jumpers 16 and 17 on the board bottom layer.
 
 Finally, the jumpers on either side can be used to customize the GPIO assignments. For example, if you want to swap 1-Wire data pin from GPIO4 to GPIO15, you can unsolder the GPIO4 resistor jumper and add a jumper wire from either the ESP32 module pad or the GPIO header to the lower resistor jumper pad.
+
+**Note:** The silkscreen labeling for GPIO 1 and 3 solder jumpers is incorrect in revision 0.3.1 devices. They are labeled 3 and 34 while the correct labeling is 1 and 3.
