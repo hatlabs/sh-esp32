@@ -78,7 +78,7 @@ If you don't have a step drill bit at hand, use standard metal bits.
 Start with a small diameter and increase the diameter with small increments to limit the risk of cracking the case.
 
 ![Step drill bit]({{site.baseurl}}/media/step_drill_bit.jpg "Step drill bit")
-<a name="fig_step_drill_bit"></a>*An example of stepp drill bits.*
+<a name="fig_step_drill_bit"></a>*An example of step drill bits.*
 
 Plan your hole placement in advance.
 If you only need a couple of holes, placing them on the short side may result in the neatest outcome.
