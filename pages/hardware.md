@@ -213,36 +213,45 @@ You can place a header on the row at the edge and make connections to the inner 
 
 ## Pinouts of peripherals
 
-The ESP32 has a GPIO matrix that allows most of the digital GPIO functionality to be mapped freely to any GPIO. This is utilized extensively on SH-ESP32, and few peripherals are mapped to their standard pins. The GPIO pinout of different peripherals is given below. Unlisted pins are not used by SH-ESP32 and can be
-utilized freely.
+The ESP32 has a GPIO matrix that allows most of the digital GPIO functionality to be mapped freely to any GPIO.
+This is utilized extensively on SH-ESP32, and few peripherals are mapped to their standard pins.
+The GPIO pinout of different peripherals is given below. Unlisted pins are not used by SH-ESP32 and can be utilized freely.
 
-The GPIOs having a mark in the Jumper column are by default connected to the respective peripheral and disconnected from the GPIO header. These connections may be altered by modifying the jumpers as described in Section "[Customizing GPIO assignments](#solder_jumpers)".
+The GPIOs having a mark in the Jumper column are by default connected to the respective peripheral and disconnected from the GPIO header.
+These connections may be altered by modifying the jumpers as described in Section "[Customizing GPIO assignments](#solder_jumpers)".
 
-| GPIO # | Jumper | Function | Optional Function |
-| ------ | -------- |  |
-| 00 |   | BOOT | Ethernet REF_CLK |
-| 01 | x | Serial TXD0 |  |
-| 02 |   | Blue LED |  |
-| 03 | x | Serial RXD0 |  |
-| 04 | x | 1-Wire data |  |
-| 05 |   | Free | Ethernet Reset_N  |
-| 12 |   | Free | JTAG TDI |
-| 13 |   | Free | JTAG TCK |
-| 14 |   | Free | JTAG TMS |
-| 15 |   | Free | JTAG TDO |
-| 16 | x | I2C SDA |  |
-| 17 | x | I2C SCL |  |
-| 18 |  | Free | Ethernet MDIO |
-| 19 |  | Free | Ethernet TXD[0] |
-| 21 |  | Free | Ethernet TX_EN |
-| 22 |  | Free | Ethernet TXD[1] |
-| 25 |  | Free | Ethernet RXD[0] |
-| 26 |  | Free | Ethernet RXD[1] |
-| 27 |  | Free | Ethernet CRS_DV |
-| 32 | x | CAN TX |  |
-| 33 | x | Opto OUT |  |
-| 34 | x | CAN RX |  |
-| 35 | x | Opto IN |  |
+The ADC column lists pins connected to either of the ESP32's two ADCs.
+ADC2 is used by the WiFi, so if WiFi is in use, ADC2 cannot be used.
+
+| GPIO #  | Jumper | ADC | Function | Optional Function |
+| ------: | :----: | --: | -------- | ----------------- |
+| 00      |        | 2   | BOOT | Ethernet REF_CLK |
+| 01      | x      |     | Serial TXD0 |  |
+| 02      |        | 2   | Blue LED |  |
+| 03      | x      |     | Serial RXD0 |  |
+| 04      | x      | 2   | 1-Wire data |  |
+| 05      |        |     | Free | Ethernet Reset_N  |
+| 12      |        | 2   | Free | JTAG TDI |
+| 13      |        |     | Free | JTAG TCK |
+| 14      |        | 2   | Free | JTAG TMS |
+| 15      |        | 2   | Free | JTAG TDO |
+| 16      | x      |     | I2C SDA |  |
+| 17      | x      |     | I2C SCL |  |
+| 18      |        |     | Free | Ethernet MDIO |
+| 19      |        |     | Free | Ethernet TXD[0] |
+| 21      |        |     | Free | Ethernet TX_EN |
+| 22      |        |     | Free | Ethernet TXD[1] |
+| 25      |        | 2   | Free | Ethernet RXD[0] |
+| 26      |        | 2   | Free | Ethernet RXD[1] |
+| 27      |        | 2   | Free | Ethernet CRS_DV |
+| 32      | x      | 1   | CAN TX |  |
+| 33      | x      | 1   | Opto OUT |  |
+| 34      | x      | 1   | CAN RX, input only |  |
+| 35      | x      | 1   | Opto IN, input only |  |
+| 36 (VP) |        | 1   | Free, input only |  |
+| 39 (VN) |        | 1   | Free, input only |  |
+
+[This page](https://randomnerdtutorials.com/esp32-pinout-reference-gpios/) provides a great description of the different ESP32 GPIOs and their availability.
 
 ### <a name="solder_jumpers"></a>Customizing GPIO assignments
 
