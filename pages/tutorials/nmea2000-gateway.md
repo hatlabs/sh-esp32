@@ -12,9 +12,15 @@ In this tutorial, I'll show how to build an Actisense NGT-1 compatible NMEA 2000
 Thanks to the SH-ESP32's integrated CAN interface, no external hardware is required.
 The resulting device is an isolated NMEA 2000 gateway that will both read and write NMEA 2000 packets and allow your computer to interface with your boat electronics.
 
-## Hardware assembly
+## Parts needed
 
-A step-by-step guide for assembling the hardware required for the NMEA 2000 USB gateway.
+To complete this tutorial, you need the following parts:
+
+- [SH-ESP32 enclosure bundle](https://hatlabs.fi/product/sh-esp32-enclosure-bundle/)
+- [NMEA 2000 male panel connector](https://hatlabs.fi/product/nmea-2000-panel-connector-male/)
+- USB panel connector (soon to be available at hatlabs.fi) or a [PG9 cable gland](https://hatlabs.fi/product/pg9-cable-gland/)
+
+## Hardware assembly
 
 ### Required accessories
 
