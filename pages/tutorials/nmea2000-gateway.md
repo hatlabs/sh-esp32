@@ -14,7 +14,7 @@ The resulting device is an isolated NMEA 2000 gateway that will both read and wr
 
 ## Hardware assembly
 
-A step-by-step guide for assembling the 
+A step-by-step guide for assembling the hardware required for the NMEA 2000 USB gateway.
 
 ### Required accessories
 
@@ -137,7 +137,7 @@ Select Default -> Upload.
 You should see the build system and compiler output scroll at the bottom part of the screen as PlatformIO downloads the dependencies and builds everything.
 Once everything is built, PlatformIO should proceed with uploading the software on your SH-ESP32.
 
-![PlatformIO bug icon](media/platformio_button.png "PlatformIO bug icon"){: .d-flex }
+![PlatformIO bug icon](media/platformio_button.png "PlatformIO bug icon")
 
 If you want to personalize your device, open the `src/main.cpp` file in VSCode and edit the device information strings around line 74.
 Those strings will be seen by other NMEA 2000 devices on the network.
@@ -162,7 +162,11 @@ Right?
 To enable the device, you need to add an NMEA 2000 data connection.
 Select Server -> Data Connections.
 Click on the blue Add button.
-You should now see a form with fields "Data Type", "Enabled", and so on.
+
+You should now see the following form.
+
+![Data Connection Config](media/data_connection_config.png "Data Connection Config")
+
 Select "NMEA 2000" as the data type.
 Provider ID can be any string.
 `can0` is fine.
@@ -181,7 +185,12 @@ Next, restart the server by clicking the Restart link at the top bar.
 If you had started the Signal K server manually, you might now have to restart it on the command line.
 
 If all went fine, you should have `can0` displayed in the "Connection & Plugin Status" section.
+
+![Signal K server receiving data](media/sk-server-online.png "Signal K server receiving data")
+
 If your connection status is green, open the Data Browser and marvel at the received NMEA 2000 data!
+
+![Data Browser displays data](media/pgns_received.png "Data Browser displays data")
 
 Almost there.
 You still want to test that transmitting data works too.
@@ -196,12 +205,20 @@ Finally, configure the plugin: Server -> Plugin Config.
 Open the "Signal K to NMEA 2000" section.
 The default server installation doesn't have much data to transmit, but there's something: system time!
 Scroll down to "System Time (126992)" and Enable it.
+
+![System time config](media/system_time_config.png "System time config"){:width="50%"}
+
 Set the Resend time to 1 second.
 Scroll down to the bottom of the page and select Submit.
 
-If all the above steps went fine, you should see the TX row on the display change from 0 to 1.
+If all the above steps went fine, you should see the TX row on the display change from 0 to 1:
+
+![Gateway in action](media/gateway_in_action.jpg "Gateway in action")
+
 If you have a Multi-function Display (chart plotter) on your NMEA 2000 network, browse to its Network settings.
 On a device list page, you should now see "SH-ESP32 NMEA 2000 USB GW" among other devices!
 If you tap on it, you should also see the time and date as provided data.
 This means your installation was successful and you have data flowing back and forth!
 Time to go brag about it online and to your marina neighbors!
+
+![MfD view](media/mfd_view.jpg "MfD view")
