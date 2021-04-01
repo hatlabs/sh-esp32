@@ -8,7 +8,7 @@ nav_order: 1
 
 # NMEA 2000 USB gateway
 
-In this example, I'll show how to build an Actisense NGT-1 compatible NMEA 2000 USB gateway with an SH-ESP32 and a couple of connectors.
+In this tutorial, I'll show how to build an Actisense NGT-1 compatible NMEA 2000 USB gateway with an SH-ESP32 and a couple of connectors.
 Thanks to the SH-ESP32's integrated CAN interface, no external hardware is required.
 The resulting device is an isolated NMEA 2000 gateway that will both read and write NMEA 2000 packets and allow your computer to interface with your boat electronics.
 
