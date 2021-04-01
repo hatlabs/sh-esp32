@@ -132,7 +132,7 @@ Another prerequisite is the driver for the CH340 USB serial chip. Linux supports
 
 ### Installation
 
-The SH-ESP32 NMEA 2000 USB gateway software is available here: https://github.com/hatlabs/SH-ESP32-nmea2000-gateway
+The SH-ESP32 NMEA 2000 USB gateway software is available here: [https://github.com/hatlabs/SH-ESP32-nmea2000-gateway](https://github.com/hatlabs/SH-ESP32-nmea2000-gateway)
 
 
 Once you have PlatformIO installed, clone the repo (if you're comfortable with Git) or download the source code as a zip file by clicking on the green "Code" button and selecting "Download ZIP".
