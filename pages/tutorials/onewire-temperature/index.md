@@ -218,7 +218,8 @@ If you have automatic service discovery correctly configured, you should immedia
 
 ![Device Access Request](media/device_access_request.png "Device Access Request"){:width="50%"}
 
-Open the access request, set authentication timeout to "NEVER", and click Approve. You should immediately get new data on the Signal K server dashboard and data browser.
+Open the access request, set authentication timeout to "NEVER", and click Approve. 
+You should immediately get new data on the Signal K server dashboard and data browser.
 
 SensESP device on the dashboard:
 
@@ -230,7 +231,8 @@ Temperature readings on the data browser:
 
 ### NMEA 2000
 
-To test NMEA 2000 connectivity, plug your device into your NMEA 2000 network. Assuming you have a chart plotter on the network, you should be able to get the device list with the new temperature sensor on it:
+To test NMEA 2000 connectivity, plug your device into your NMEA 2000 network. 
+Assuming you have a chart plotter on the network, you should be able to get the device list with the new temperature sensor on it:
 
 ![NMEA 2000 device list](media/n2k_device_list.jpg "NMEA 2000 device list"){:width="50%"}
 
@@ -244,10 +246,31 @@ This verifies that the connection is working.
 
 All that remains is to install the device and the sensor cables on the boat.
 I didn't want to do permanent modifications to my Yanmar 3GM30F diesel engine.
-My sensor installation was very much a low-tech one, but nevertheless quite functional. The oil temperature sensor went to the side of the engine oil pan. There was a threaded bolt hole on the oil pan. I took a suitably sized square washer and bent one corner slightly, then used that to secure the sensor against the oil pan. Just take care not to tighten the bolt too hard, as that will likely crush the sensor.
+My sensor installation was very much a low-tech one, but nevertheless quite functional. 
+The oil temperature sensor went to the side of the engine oil pan. 
+There was a threaded bolt hole on the oil pan. 
+I took a suitably sized square washer and bent one corner slightly, then used that to secure the sensor against the oil pan. 
+When doing this, take care to not tighten the bolt too hard, as that will likely crush the sensor.
 
-The coolant temperature is measured on the surface of the coolant return hose. The sensor is first taped on with silicone tape. Silicone tape can sustain high temperatures, is a very good insulator, and is self fusing, providing a secure seal around the hose and the sensor. Nevertheless, I would still add a hose clamp over the tape to ensure that the cable can't get loose and fall onto the engine belts.
+![Oil sensor installation](media/oil_sensor_installation.jpg "Oil sensor installation"){:width="50%"}
 
-The exhaust sensor went onto the exhaust bend, after the coolant water hose connection. Similar to the coolant temperature sensor, I attached it with silicone tape and a hose clamp.
+The coolant temperature is measured on the surface of the coolant return hose. 
+The sensor is first taped on with silicone tape. 
+Silicone tape can sustain high temperatures, is a very good insulator, and is self fusing, providing a secure seal around the hose and the sensor. 
+Nevertheless, I would still add a hose clamp over the tape to ensure that the cable can't get loose and fall onto the engine belts.
 
-For all sensors, take care to route the cables neatly. There should be some slack to allow for engine vibrations, but otherwise the cables should be mounted on some fixtures every 30 cm (1 ft) or so. At no point should the cable be able to chafe against the vibrating engine. Also, be careful not to allow the cable touch very hot parts of the engine such as the exhaust manifold.
+![Coolant sensor installation](media/coolant_sensor_installation.jpg "Coolant sensor installation"){:width="50%"}
+
+The exhaust sensor went onto the exhaust bend, after the coolant water hose connection. 
+Similar to the coolant temperature sensor, I attached it with silicone tape and a hose clamp.
+
+![Exhaust sensor installation](media/exhaust_sensor_installation.jpg "Exhaust sensor installation"){:width="50%"}
+
+For all sensors, take care to route the cables neatly. 
+There should be some slack to allow for engine vibrations, but otherwise the cables should be mounted on some fixtures every 30 cm (1 ft) or so.
+At no point should the cable be able to chafe against the vibrating engine. 
+Also, be careful not to allow the cable touch very hot parts of the engine such as the exhaust manifold.
+
+Congratulations! 
+You now have a fancy new temperature sensor for your engine!
+Time to go brag online and to your marina neighbors!
