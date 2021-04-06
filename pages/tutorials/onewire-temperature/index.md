@@ -43,7 +43,7 @@ In this tutorial, I'll instead use separate connectors to allow for a more flexi
 ### Preparing the enclosure
 
 The enclosure needs to have holes drilled for the different connectors.
-Due to the number of holes required, I prepared a [printable drill template](media/enclosure_with_template.pdf) that can be taped on the enclosure.
+Due to the number of holes required, I prepared a [printable drill template](media/enclosure_drill_template.pdf) that can be taped on the enclosure.
 
 ![SH-ESP32 enclosure with the template](media/enclosure_with_template.jpg "SH-ESP32 enclosure with the template"){:width="50%"}
 
