@@ -8,8 +8,8 @@ nav_order: 20
 
 # 1-Wire temperature sensing
 
-This tutorial will walk you through creating a temperature sensing device that can be used for example to measure engine oil, coolant, and wet exhaust temperatures of an older inboard marine diesel engine.
-My own engine is a Yanmarin 3GM30F but the approach is completely generic and can be adapted to any engine.
+This tutorial will walk you through creating a temperature sensing device that can be used for example to measure engine oil, coolant, and wet exhaust temperatures of of any engine that doesn't already report these temperatures to Signal K or your N2K network.
+My own engine is a Yanmar 3GM30F but the approach is completely generic and can be adapted to any engine.
 I have had a similar setup for several years and it gives me an extra peace of mind: 
 I would get an early alarm if the temperature would begin to rise (I've had coolant issues in the past), and also if I ever would forget to open the water intake seacock, I would get an alarm of rising exhaust temperature before anything irreversible could happen.
 
@@ -97,6 +97,8 @@ For NMEA 2000 use, you must also provide power to the SH-ESP32 device. You could
 
 ![Wire link](media/wire_link.jpg "Wire link"){:width="50%"}
 
+The wire link headers are normally unpopulated. Short the wire link plus and GND pins as indicated by the lines. Shorting can be done by soldering a short piece of wire directly on the headers, or as I did, by adding header pins and then connecting the pins using [wire wrap](https://en.wikipedia.org/wiki/Wire_wrap). (I absolutely *love* wire wrap!)
+
 [^1]:
 
     Actually, 1-Wire is ideally constructed as a bus, with a long trunk from which shorter drop cables are split off. 
@@ -114,13 +116,15 @@ The header strips form bus bars of sorts for each 1-Wire pin.
 ### Assembly
 
 Assuming that the 1-Wire data connectors are already in place, wiggle the SH-ESP32 board to the enclosure and fasten it with the small 3x6 mm screws. 
-Then mount the power (or NMEA 2000) connector and connect everything to the board.
+Then mount the power (or NMEA 2000) connector and connect everything to the board to the respective connectors.
 
 If you're going to use an OLED display, now is the time to mount it.
 
 My own end result is shown below.
 
 ![Finished enclosure](media/finished_enclosure.jpg "Finished enclosure"){:width="50%"}
+
+Final installation of the sensors on the engine itself is discussed later in this tutorial.
 
 ## Software
 
@@ -151,11 +155,18 @@ The sensors are then connected to Signal K outputs around line 137.
 Again, you can modify the Signal K paths according to your preferences. 
 It is advisable to try to follow the [Signal K specification](http://signalk.org/specification/1.5.0/doc/vesselsBranch.html) for the path names, but if you can't find anything fitting, feel free to invent your own.
 
-In the example, coolant temperature value is connected to two paths: `propulsion.main.temperature` and `propulsion.main.coolantTemperature`.
+In the example, coolant temperature value is connected to two paths: `propulsion.main.temperature` and `propulsion.main.coolantTemperature`. Coolant temperature is typically regarded the overall engine temperature, but there is also a specific path defined for it. This slight redundancy guarantees that both paths are specified, should a downstream process expect either of them.
 
 If you are using the OLED display, you want to modify the display outputs around line 170. 
 Those define how the temperature values are displayed on the small OLED screen.
-Additionally, if you want to have your temperatures in Fahrenheit, go back and modify the lines 29 and 30 accordingly.
+
+You might at this point be already wondering about the temperature units.
+Both Signal K and NMEA 2000 use Kelvins internally, and that is what SensESP uses as well.
+The idea is that everything is internally processed in standard SI units and conversion to customary units such as °C or °F is performed only when displaying the values.
+SensESP normally would never convert Kelvins to °C or °F, but displaying values on the OLED screen is that single big exception to the rule: the displayed values should be converted to customary units.
+
+The tutorial software shows the temperatures by default in Celsius.
+If you want to have your temperatures in Fahrenheit, go back and modify the lines 29 and 30 accordingly.
 
 #### NMEA 2000 data
 
@@ -186,15 +197,15 @@ To change the PGN mapping, you will have to modify the code around lines 62 and 
 Each 1-Wire sensor contains a unique hardware address.
 When the program first starts, it assigns newly detected sensor addresses to `OneWireTemperature` sensor objects and saves the information in the flash memory.
 The device scan order is arbitrary, so if all sensors are connected at once, they are assigned to `OneWireTemperature` objects in a random order.
-The assignments can be modified by through the web configuration UI, but there's an easier way: connect the sensors one by one.
+The assignments can be modified through the web configuration UI, but there's an easier way: connect the sensors one by one.
 
 The example program defines `OneWireTemperature` objects in the following order: oil, coolant, exhaust. Hence, do this:
 
-1. Connect the oil temperature sensor.
-2. Power on the device.
+1. Connect the sensor that will become the oil temperature sensor.
+2. Power on the device for a few seconds.
 3. Power off the device.
 4. Connect the coolant temperature sensor.
-5. Power on the device.
+5. Power on the device for a few seconds.
 6. Power off the device.
 7. Connect the exhaust temperature sensor.
 8. Power on the device.
@@ -208,11 +219,13 @@ Test your device before installing it on the boat. If there are any issues with 
 
 ### Signal K
 
-If you are using the device with Signal K, you need to connect it to your Signal K server. If you haven't one set up yet, follow the [Signal K server installation instructions](https://github.com/SignalK/signalk-server).
+If you are using the device with Signal K, you need to connect it to your Signal K server. If you haven't set up one yet, follow the [Signal K server installation instructions](https://github.com/SignalK/signalk-server).
 
  You could set the Wi-Fi and server information in the code, but this tutorial relies on automatic (Bonjour/mDNS/DNS-DD/Avahi) service discovery.
 
-After powering up, if the device hasn't been configured yet, a wireless access point named "Configure temperatures" should appear. If you connect to it, you should be automatically taken to the WiFiManager configuration screen.
+After powering up, if the device hasn't been configured yet, a wireless access point named "Configure temperatures" should appear.
+If you connect to it, you should be automatically taken to the WiFiManager configuration screen.
+If that doesn't happen, open the browser and navigate to http://192.168.4.1/.
 Select the Wi-Fi network you normally use and enter the password.
 The device should now automatically connect to the network.
 
