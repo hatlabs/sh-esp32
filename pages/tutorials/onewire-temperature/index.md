@@ -141,19 +141,21 @@ The example project assumes three sensors for engine oil, engine coolant, and en
 If you have a different number of sensors or are measuring different things, you need to modify the program. 
 Open the `src/main.cpp` file in Visual Studio Code.
 
-The sensors are defined in `main.cpp` around line 66. 
+The sensors are defined in `main.cpp` around line 97. 
 Modify the configuration paths and the variable names according to your liking.
 
-Metadata for the sensor Signal K outputs are defined beginning from line 71. 
+Metadata for the sensor Signal K outputs are defined beginning from line 106. 
 That defines the human-readable descriptions and value units for the Signal K paths.
 
-The sensors are then connected to Signal K outputs around line 95. 
+The sensors are then connected to Signal K outputs around line 137. 
 Again, you can modify the Signal K paths according to your preferences. 
 It is advisable to try to follow the [Signal K specification](http://signalk.org/specification/1.5.0/doc/vesselsBranch.html) for the path names, but if you can't find anything fitting, feel free to invent your own.
 
-If you are using the OLED display, you want to modify the display outputs around line 122. 
+In the example, coolant temperature value is connected to two paths: `propulsion.main.temperature` and `propulsion.main.coolantTemperature`.
+
+If you are using the OLED display, you want to modify the display outputs around line 170. 
 Those define how the temperature values are displayed on the small OLED screen.
-Additionally, if you want to have your temperatures in Fahrenheit, go back and modify the lines 23 and 24 accordingly.
+Additionally, if you want to have your temperatures in Fahrenheit, go back and modify the lines 29 and 30 accordingly.
 
 #### NMEA 2000 data
 
@@ -177,7 +179,7 @@ PGN 127489 transmits both oil temperature and coolant temperature, so we have to
 The approach I took in this example is that the temperature values are stored in a variable, and whenever either oil or coolant temperature is updated, a PGN 127489 is always sent.
 The wet exhaust temperature is sent separately using PGN 130312.
 
-To change the PGN mapping, you will have to modify the code around lines XXX and YYY.
+To change the PGN mapping, you will have to modify the code around lines 62 and 219.
 
 ## Sensor configuration
 
