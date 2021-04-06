@@ -19,7 +19,7 @@ The end result of this tutorial is this neat little device that measures three d
 
 ![SH-ESP32 temperature sensor end result](media/final_result.jpg "SH-ESP32 temperature sensor end result"){:width="50%"}
 
-If you have any suggestions, corrections, improvement ideas, or other feedback, I'd love to hear about them at [matti.airas@hatlabs.fi](mailto:matti.airas@hatlabs.fi).
+If you have any suggestions, corrections, improvement ideas, or other feedback about this tutorial, I'd love to hear about them at [matti.airas@hatlabs.fi](mailto:matti.airas@hatlabs.fi).
 
 
 ## Parts needed
