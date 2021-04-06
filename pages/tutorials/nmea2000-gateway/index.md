@@ -3,7 +3,7 @@ layout: default
 title: NMEA 2000 USB gateway
 parent: Tutorials and Examples
 grand_parent: Home
-nav_order: 1
+nav_order: 10
 ---
 
 # NMEA 2000 USB gateway
@@ -20,6 +20,7 @@ To complete this tutorial, you need the following parts:
 - [SH-ESP32 enclosure bundle](https://hatlabs.fi/product/sh-esp32-enclosure-bundle/)
 - [NMEA 2000 male panel connector](https://hatlabs.fi/product/nmea-2000-panel-connector-male/)
 - USB panel connector (soon to be available at hatlabs.fi) or a [PG9 cable gland](https://hatlabs.fi/product/pg9-cable-gland/)
+- [OLED display](https://hatlabs.fi/product/128x64-oled-display/) (optional)
 
 ## Hardware assembly
 
