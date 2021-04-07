@@ -64,9 +64,10 @@ The connectors are as follows:
 
 4. **1-Wire header**:
    1-Wire interface fitted with ESD protection and noise filtering as well as low-pass filtering required for longer networks.
+   No other circuitry is required for connecting 1-Wire devices to the SH-ESP32.
    
 5. **I2C header**:
-   Four-pin header for connecting I2C slave devices to SH-ESP32.
+   Four-pin header for connecting I2C slave devices to the SH-ESP32.
    A female header accepts many popular inexpensive OLED display modules using the SSD1306 driver as is.
 
    There is also an unpopulated Qwiic-compatible JST SH footprint next to the 2.54 mm header.
