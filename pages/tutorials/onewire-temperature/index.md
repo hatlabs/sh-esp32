@@ -7,6 +7,17 @@ nav_order: 20
 ---
 
 # 1-Wire temperature sensing
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+## Introduction
 
 This tutorial will walk you through creating a temperature sensing device that can be used for example to measure engine oil, coolant, and wet exhaust temperatures of of any engine that doesn't already report these temperatures to Signal K or your N2K network.
 My own engine is a Yanmar 3GM30F but the approach is completely generic and can be adapted to any engine.
