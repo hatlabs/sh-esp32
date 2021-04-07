@@ -116,7 +116,7 @@ The header strips form bus bars of sorts for each 1-Wire pin.
 ### Assembly
 
 Assuming that the 1-Wire data connectors are already in place, wiggle the SH-ESP32 board to the enclosure and fasten it with the small 3x6 mm screws. 
-Then mount the power (or NMEA 2000) connector and connect everything to the board to the respective connectors.
+Then mount the power (or NMEA 2000) connector and connect everything to the board to [the respective connectors](../../hardware/#connectors).
 
 If you're going to use an OLED display, now is the time to mount it.
 
