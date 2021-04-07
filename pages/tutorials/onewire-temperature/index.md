@@ -77,7 +77,7 @@ I wanted to mount my device vertically so that the power connector exits down an
 
 ### Connecting wires
 
-Connecting multiple one-wire sensors to one device is easy: you just need to connect each wire in parallel[^1].
+Connecting multiple one-wire sensors to one device is easy: you just need to connect each wire in parallel.
 I soldered lengths of wires on the connectors with the following pinout:
 
 1. Ground (black)
@@ -110,14 +110,9 @@ For NMEA 2000 use, you must also provide power to the SH-ESP32 device. You could
 
 The wire link headers are normally unpopulated. Short the wire link plus and GND pins as indicated by the lines. Shorting can be done by soldering a short piece of wire directly on the headers, or as I did, by adding header pins and then connecting the pins using [wire wrap](https://en.wikipedia.org/wiki/Wire_wrap). (I absolutely *love* wire wrap!)
 
-[^1]:
+#### Alternate wiring scheme
 
-    Actually, 1-Wire is ideally constructed as a bus, with a long trunk from which shorter drop cables are split off. 
-    However, for shorter cable lengths, as in our case, it is safe to think of the network topology as a very short bus (zero-length, even) with slightly longer drop cables.
-
-#### Alternative wiring scheme
-
-The crude mockup photo shows an alternative, and possibly better, wiring scheme for the 1-Wire connectors.
+The crude mockup photo shows an alternate, and possibly better, wiring scheme for the 1-Wire connectors.
 
 ![Alternate wiring](media/alternate_wiring.jpg "Alternate wiring"){:width="50%"}
 
@@ -136,6 +131,28 @@ My own end result is shown below.
 ![Finished enclosure](media/finished_enclosure.jpg "Finished enclosure"){:width="50%"}
 
 Final installation of the sensors on the engine itself is discussed later in this tutorial.
+
+### 1-Wire network considerations
+
+1-Wire is designed for a bus network topology, with client devices along a long bus cable:
+
+![1-Wire Bus](media/ideal_bus_topology.svg "1-Wire Bus"){:width="80%"}
+
+The maximum bus length depends on the controller, cable used, and number of clients on the bus, but bus lengths over 100 m with 20 clients are quite realistic with dedicated hardware. The SH-ESP32 has not been designed with maximal network length in mind but at least 30 m bus lengths should be easily attainable with suitable cable.
+
+[The Springbok Digitronics 1-Wire Design Guide](https://www.unipi.technology/shop/product/download?fileId=142) states that twisted pair is recommended for 1-Wire use. A regular Ethernet cable (Cat 5 or better) is well suited for long-distance 1-Wire installations. Springbok Digitronics even suggests [a pinout standard](https://opencircuits.com/images/a/a3/A_Guide_to_the_1WRJ45_Standard.pdf) for connecting 1-Wire devices with standard Ethernet RJ45 connectors. Having said this, 1-Wire is stated to work well even using flat telephone ribbon cable for distances of up to 30 m.
+
+Individual sensors can be separated from the main bus by a length of drop cable (also known as stub cable). The maximum drop cable length recommended by Dallas Semiconductor is 3 meters.
+
+In this tutorial, short bus distances are assumed -- actually, our bus is merely a single cable splice within the enclosure and the individual sensor cables are all drop cables. This works well as long as the drop cables aren't too long.
+
+![Short bus topology](media/short_bus_topology.svg "Short bus topology"){:width="40%"}
+
+If you need to extend the network length, you should not extend the individual drop cables beyond the recommended three meters but extend the bus length instead.
+
+![Long bus topology](media/long_bus_topology.svg "Long bus topology"){:width="80%"}
+
+Place a junction box near the desired sensor locations, trim off extra drop cable length, and connect the sensors to the bus cable within the junction box. You can have multiple junction boxes along the bus. 
 
 ## Software
 
@@ -298,5 +315,5 @@ At no point should the cable be able to chafe against the vibrating engine.
 Also, be careful not to allow the cable touch very hot parts of the engine such as the exhaust manifold.
 
 Congratulations! 
-You now have a fancy new temperature sensor for your engine!
+You now have a fancy new temperature sensor for your engine, and skills to build other sensors as well!
 Time to go brag online and to your marina neighbors!

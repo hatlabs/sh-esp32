@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 2682 469" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="Ideal-bus" serif:id="Ideal bus" transform="matrix(0.945993,0,0,0.620324,-1362.23,-600.786)">
+        <rect x="1440" y="968.504" width="2834.65" height="755.906" style="fill:none;"/>
+        <g transform="matrix(1.29487,0,0,1.61206,675.025,-516.624)">
+            <path d="M944.882,1062.99L2598.43,1062.99" style="fill:none;stroke:black;stroke-width:18.63px;"/>
+        </g>
+        <g transform="matrix(0.917694,0,0,1.61206,1031.41,-516.624)">
+            <rect x="472.441" y="944.882" width="472.441" height="236.22" style="fill:rgb(235,235,235);stroke:black;stroke-width:4.45px;"/>
+        </g>
+        <g transform="matrix(1.05709,0,0,1.61206,958.738,-472.316)">
+            <text x="539.061px" y="1027.57px" style="font-family:'IBMPlexSans', 'IBM Plex Sans', sans-serif;font-size:58.333px;">1-<tspan x="596.753px " y="1027.57px ">W</tspan>ir<tspan x="684.428px " y="1027.57px ">e</tspan> Bus</text>
+            <text x="553.878px" y="1085.91px" style="font-family:'IBMPlexSans', 'IBM Plex Sans', sans-serif;font-size:58.333px;">Contr<tspan x="697.494px 730.161px 745.736px " y="1085.91px 1085.91px 1085.91px ">oll</tspan>er</text>
+        </g>
+        <g transform="matrix(1.05709,0,0,1.61206,-280.902,-760.554)">
+            <g transform="matrix(1,0,0,0.277778,1629.37,859.977)">
+                <path d="M1086.61,1275.59L1086.61,1653.54" style="fill:none;stroke:black;stroke-width:5.68px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,1890.36,-368.369)">
+                <path d="M826.772,1653.54L944.882,1771.65L826.772,1889.76L708.661,1771.65L826.772,1653.54Z" style="fill:rgb(164,176,206);stroke:black;stroke-width:4.17px;"/>
+                <g transform="matrix(4.16667,0,0,4.16667,826.772,1771.65)">
+                    <g transform="matrix(1,0,0,1,-12,-12)">
+                        <rect x="0" y="0" width="24" height="24" style="fill:none;fill-rule:nonzero;"/>
+                        <path d="M15,13L15,5C15,3.34 13.66,2 12,2C10.34,2 9,3.34 9,5L9,13C7.79,13.91 7,15.37 7,17C7,19.76 9.24,22 12,22C14.76,22 17,19.76 17,17C17,15.37 16.21,13.91 15,13ZM11,5C11,4.45 11.45,4 12,4C12.55,4 13,4.45 13,5L12,5L12,6L13,6L13,8L12,8L12,9L13,9L13,11L11,11L11,5Z" style="fill-rule:nonzero;"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(1.05709,0,0,1.61206,318.855,-760.554)">
+            <g transform="matrix(1,0,0,0.277778,1629.37,859.977)">
+                <path d="M1086.61,1275.59L1086.61,1653.54" style="fill:none;stroke:black;stroke-width:5.68px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,1890.36,-368.369)">
+                <path d="M826.772,1653.54L944.882,1771.65L826.772,1889.76L708.661,1771.65L826.772,1653.54Z" style="fill:rgb(164,176,206);stroke:black;stroke-width:4.17px;"/>
+                <g transform="matrix(4.16667,0,0,4.16667,826.772,1771.65)">
+                    <g transform="matrix(1,0,0,1,-12,-12)">
+                        <rect x="0" y="0" width="24" height="24" style="fill:none;fill-rule:nonzero;"/>
+                        <path d="M15,13L15,5C15,3.34 13.66,2 12,2C10.34,2 9,3.34 9,5L9,13C7.79,13.91 7,15.37 7,17C7,19.76 9.24,22 12,22C14.76,22 17,19.76 17,17C17,15.37 16.21,13.91 15,13ZM11,5C11,4.45 11.45,4 12,4C12.55,4 13,4.45 13,5L12,5L12,6L13,6L13,8L12,8L12,9L13,9L13,11L11,11L11,5Z" style="fill-rule:nonzero;"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(1.05709,0,0,1.61206,911.228,-760.554)">
+            <g transform="matrix(1,0,0,0.277778,1629.37,859.977)">
+                <path d="M1086.61,1275.59L1086.61,1653.54" style="fill:none;stroke:black;stroke-width:5.68px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,1890.36,-368.369)">
+                <path d="M826.772,1653.54L944.882,1771.65L826.772,1889.76L708.661,1771.65L826.772,1653.54Z" style="fill:rgb(164,176,206);stroke:black;stroke-width:4.17px;"/>
+                <g transform="matrix(4.16667,0,0,4.16667,826.772,1771.65)">
+                    <g transform="matrix(1,0,0,1,-12,-12)">
+                        <rect x="0" y="0" width="24" height="24" style="fill:none;fill-rule:nonzero;"/>
+                        <path d="M15,13L15,5C15,3.34 13.66,2 12,2C10.34,2 9,3.34 9,5L9,13C7.79,13.91 7,15.37 7,17C7,19.76 9.24,22 12,22C14.76,22 17,19.76 17,17C17,15.37 16.21,13.91 15,13ZM11,5C11,4.45 11.45,4 12,4C12.55,4 13,4.45 13,5L12,5L12,6L13,6L13,8L12,8L12,9L13,9L13,11L11,11L11,5Z" style="fill-rule:nonzero;"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(1.05709,0,0,1.61206,3744.29,-1490.99)">
+            <text x="182.478px" y="1761.68px" style="font-family:'IBMPlexSans', 'IBM Plex Sans', sans-serif;font-size:58.333px;">Dr<tspan x="242.736px " y="1761.68px ">o</tspan>p cables</text>
+        </g>
+        <g transform="matrix(1.05709,0,0,1.61206,1342.82,-2113.7)">
+            <path d="M2433.07,2119.84L2326.77,2103.17" style="fill:none;stroke:black;stroke-width:2.08px;"/>
+        </g>
+        <g transform="matrix(1.05709,0,0,1.61206,1930.28,-1305.49)">
+            <text x="182.478px" y="1761.68px" style="font-family:'IBMPlexSans', 'IBM Plex Sans', sans-serif;font-size:58.333px;">Sensors</text>
+        </g>
+        <g transform="matrix(1.05709,0,0,1.61206,2620.56,-1695.01)">
+            <text x="182.478px" y="1761.68px" style="font-family:'IBMPlexSans', 'IBM Plex Sans', sans-serif;font-size:58.333px;">Bus</text>
+        </g>
+    </g>
+</svg>
