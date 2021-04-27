@@ -4,10 +4,17 @@ title: Software
 nav_order: 40
 ---
 
-
-
-
 # Software
+
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+## Introduction
 
 There are a lot of options for languages and environments for writing software for SH-ESP32. If you don't know where to start, using Visual Studio Code and PlatformIO and SensESP are the recommended choices, but depending on your needs and preferences, you might want to try other options as well.
 

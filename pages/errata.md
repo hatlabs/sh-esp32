@@ -4,7 +4,6 @@ title: Errata
 nav_order: 45
 ---
 
-
 # Errata
 
 This page lists all known hardware bugs for different SH-ESP32 revisions.
