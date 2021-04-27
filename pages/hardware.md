@@ -224,18 +224,20 @@ These connections may be altered by modifying the jumpers as described in Sectio
 The ADC column lists pins connected to either of the ESP32's two ADCs.
 ADC2 is used by the WiFi, so if WiFi is in use, ADC2 cannot be used.
 
+Touch *N* refer to the capacitive touch sensor inputs.
+
 | GPIO #  | Jumper | ADC | Function | Optional Function |
 | ------: | :----: | --: | -------- | ----------------- |
-| 00      |        | 2   | BOOT | Ethernet REF_CLK |
+| 00      |        | 2   | BOOT | Ethernet REF_CLK; Touch 1 |
 | 01      | x      |     | Serial TXD0 |  |
-| 02      |        | 2   | Blue LED |  |
+| 02      |        | 2   | Blue LED | Touch 2 |
 | 03      | x      |     | Serial RXD0 |  |
-| 04      | x      | 2   | 1-Wire data |  |
+| 04      | x      | 2   | 1-Wire data | Touch 0 |
 | 05      |        |     | Free | Ethernet Reset_N  |
-| 12      |        | 2   | Free | JTAG TDI |
-| 13      |        |     | Free | JTAG TCK |
-| 14      |        | 2   | Free | JTAG TMS |
-| 15      |        | 2   | Free | JTAG TDO |
+| 12      |        | 2   | Free | JTAG TDI; Touch 5 |
+| 13      |        |     | Free | JTAG TCK; Touch 4 |
+| 14      |        | 2   | Free | JTAG TMS; Touch 6 |
+| 15      |        | 2   | Free | JTAG TDO; Touch 3 |
 | 16      | x      |     | I2C SDA |  |
 | 17      | x      |     | I2C SCL |  |
 | 18      |        |     | Free | Ethernet MDIO |
@@ -244,9 +246,9 @@ ADC2 is used by the WiFi, so if WiFi is in use, ADC2 cannot be used.
 | 22      |        |     | Free | Ethernet TXD[1] |
 | 25      |        | 2   | Free | Ethernet RXD[0] |
 | 26      |        | 2   | Free | Ethernet RXD[1] |
-| 27      |        | 2   | Free | Ethernet CRS_DV |
-| 32      | x      | 1   | CAN TX |  |
-| 33      | x      | 1   | Opto OUT |  |
+| 27      |        | 2   | Free | Ethernet CRS_DV; Touch 7 |
+| 32      | x      | 1   | CAN TX | Touch 9 |
+| 33      | x      | 1   | Opto OUT | Touch 8 |
 | 34      | x      | 1   | CAN RX, input only |  |
 | 35      | x      | 1   | Opto IN, input only |  |
 | 36 (VP) |        | 1   | Free, input only |  |
