@@ -137,6 +137,12 @@ The end result is shown in the photo below.
 
 ![Finished hardware assembly](media/finished_assembly.jpg "Finished hardware assembly"){:width="50%"}
 
+Another, arguably neater way of getting the USB connection through the enclosure is using a [USB panel connector](https://hatlabs.fi/product/micro-usb-panel-connector/). That lets you sidestep all fiddling around with the cable glands. All the same considerations with drilling the holes too close to each other still apply, though...
+
+![Finished assembly with Micro USB panel connectors.](media/sh-esp32-n2k-gw-micro-usb-conx-overview.jpg "Finished assembly with Micro USB panel connectors."){:width="50%"}
+
+![Micro USB connector detail](media/sh-esp32-n2k-gw-micro-usb-conx.jpg "Micro USB connector detail"){:width="50%"}
+
 ## Software
 
 ### Prerequisites
