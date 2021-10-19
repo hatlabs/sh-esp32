@@ -17,6 +17,8 @@ nav_order: 30
 
 ## Tour around the board
 
+*Note: The pictures below show a Revision 1 board. Rev. 2 boards are functionally identical but have different power and CAN connectors and minor component changes.*
+
 The different functional blocks of SH-ESP32 are shown below.
 
 ![Functional blocks]({{site.baseurl}}/media/sh-esp32_r0.3.1_top_func_annotated.jpg "Functional blocks of SH-ESP32")

@@ -34,3 +34,16 @@ Changes to 0.3.1:
 - Change some components according to component availability
 
 Schematics: [SH-ESP32-1.0.0-schema.pdf](assets/SH-ESP32-1.0.0-schema.pdf)
+
+
+## Version 2.0.0
+
+Changes to 1.0.0:
+
+- Change the power input buck converter to XL1509 for easier part availability
+- Instead of the ISO1050 isolated CAN transceiver, use a separate digital isolator and transceiver
+- Use Phoenix MC type 3.81 mm pluggable screw terminals for power input and CAN bus connectors. These connectors are mechanically more durable and easier to use than the JST XH type connectors used earlier.
+- Connectors and headers are now pre-soldered to the board
+
+Schematics: [SH-ESP32-2.0.0-schema.pdf](assets/SH-ESP32-2.0.0-schema.pdf)
+
