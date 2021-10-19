@@ -15,6 +15,13 @@ nav_order: 20
 
 ## Assembling the hardware
 
+### Revision 2 boards
+
+Revision 2 boards (the ones with the green pluggable screw terminals on board) come pre-assembled, so no soldering is required.
+Pluggable screw terminal plugs used for power input and CAN bus interfacing are provided in the sales package together with some wire for making the connections.
+
+### Revision 1 boards
+
 The SH-ESP32 boards sold by Hat Labs are mostly unassembled.
 Only the USB connector has been soldered on at delivery.
 You need to solder on the remaining connectors, or at least the ones you need.
