@@ -10,8 +10,8 @@ permalink: /
 
 Sailor Hat with ESP32 (SH-ESP32) is a powerful microcontroller development board for the marine environment.
 
-![SH-ESP32 top]({{site.baseurl}}/media/sh-esp32_r0.3.1_top_render.jpg "SH-ESP32 top view")
-<a name="fig_top_view"></a>*SH-ESP32 top view.*
+![SH-ESP32 top]({{site.baseurl}}/media/sh-esp32_r2.0.0_top_render.jpg "SH-ESP32 Rev. 2 top view")
+<a name="fig_top_view"></a>*SH-ESP32 Rev. 2 top view.*
 
 With SH-ESP32 you can easily create all kinds of sensors and control interfaces for your boat.
 Examples include RPM or fuel and water tank level meters, bilge alarms, chain counters, electrical compasses, attitude sensors, and so on.
