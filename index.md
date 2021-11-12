@@ -29,3 +29,9 @@ You can create your own SH-ESP32 derivatives as long as you share them under sim
 
 Ready-made CE-certified SH-ESP32 boards can be purchased from [Hat Labs Ltd](https://hatlabs.fi).
 All design files are also available at the [SH-ESP32 hardware GitHub repository](https://github.com/hatlabs/sh-esp32-hardware/).
+
+## NMEA 2000 compatibility
+
+SH-ESP32 is open hardware and the provided and suggested software are open source under liberal software and hardware licenses. NMEA 2000 is a proprietary standard by National Marine Electronics Association (NMEA). The licensing and certification processes of NMEA are fundamentally incompatible with open source development, and while several references to NMEA 2000 are made in this documentation, the products of Hat Labs Ltd are not, and will not be certified by NMEA.
+
+However, a lot of effort, both in the lab and in the real-world environment, has been put into ensuring that SH-ESP32 is electrically compatible with NMEA 2000, and that the supplied example software are compatible with NMEA 2000 communication protocol.
