@@ -19,12 +19,14 @@ nav_order: 10
 
 ## Introduction
 
-In this tutorial, I'll show how to build an Actisense NGT-1 compatible NMEA 2000 USB gateway with an SH-ESP32 and a couple of connectors.
+In this tutorial, I'll show how to build an Actisense&trade;[^1] NGT-1 compatible NMEA 2000 USB gateway with an SH-ESP32 and a couple of connectors.
 Thanks to the SH-ESP32's integrated CAN interface, no external hardware is required.
 The resulting device is an isolated NMEA 2000 gateway that will both read and write NMEA 2000 packets and allow your computer to interface with your boat electronics.
 The NMEA 2000 gateway could be used to interface any major PC based navigational software with your NMEA 2000 network, or to connect a Raspberry Pi based Signal K server to the NMEA 2000 bus, or even to diagnose NMEA 2000 issues with suitable software.
 
 If you have any suggestions, corrections, improvement ideas, or other feedback about this tutorial, I'd love to hear about them at [matti.airas@hatlabs.fi](mailto:matti.airas@hatlabs.fi).
+
+[^1]: Actisense is a trademark of Active Research Limited.
 
 ## Parts needed
 
