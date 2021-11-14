@@ -66,14 +66,10 @@ The connectors are as follows:
 
 2. **CAN bus connector**:
    A 4-pin JST XH connector designed to be connected to a standard NMEA 2000 compatible DeviceNet M12 connector on the enclosure.
-   This connector can also be replaced with a 2.5 mm terminal block if so desired. Note that the GND pin must be connected to some
-   other source of GND on the board - otherwise, it is not connected to anything.
-
+   
 3. **Optocoupler I/O header**:
-   Optocoupler input and output can be provided via this interface. The labels for these four pins are a bit "north" on the board: GND, Vext, IN,
-   and OUT. Connect GND to any of the GND sources on the board. Connect your input signal (voltage up to 18V) to IN. Connect OUT to your desired GPIO.
-   Connect Vext to any 3.3V source on the board - this is what will be passed along to the OUT pin when a signal is received on the IN pin. 
-
+   Optocoupler input and output can be provided via this interface. The labels for these four pins are a bit "north" on the board: GND, Vext, IN, and OUT.
+   
 4. **1-Wire header**:
    1-Wire interface fitted with ESD protection and noise filtering as well as low-pass filtering required for longer networks.
    No other circuitry is required for connecting 1-Wire devices to the SH-ESP32. The 1-Wire data in pin (labeled "DQ" on the board
@@ -100,8 +96,8 @@ The connectors are as follows:
    This area can be used for your custom modifications.
    
 10. **Additional voltage output**:
-    NOTE: the labeling of these six pads is misleading. The top three are all GND, and the bottom three are all 3.3V. 
-    Ignore the lines silkscreened around the pads.
+    Use these pads to get additional GND and 3.3V voltage output for any modifications you need.
+    Note that despite what the silkscreen might suggest, the top three pins are all GND and the bottom three are all 3.3V.
 
 11. **GPIO header**:
     The GPIO header provides connections to all GPIO pins available on the ESP32 module.
@@ -195,7 +191,10 @@ Additionally, the SH-ESP32 opto I/O implementation should be able to drive slow-
 
 The absolute maximum voltage for the optocoupler input is 18V but it can be extended by adding an additional current-limiting resistor in series to the input.
 
-Whatever voltage you provide to the Vext pin will be output on the OUT pin whenever 3V-18V is sensed on the IN pin.
+If you provide a voltage between about 2.5V and 18V in ISO IN, you'll have the output of the input optocoupler pulled high, meaning that OPTO_IN (GPIO 35) is pulled high.
+
+Likewise, if you pull OPTO_OUT (GPIO 33) high, that will make the ISO_OUT pin be driven to the voltage you have supplied to the Vext pin.
+
 It is possible to drive small automotive relays using the optocoupler output. In that case, the solenoid pins should be connected to the Vext and OUT pins.
 
 ### GPIO header
