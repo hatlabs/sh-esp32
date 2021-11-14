@@ -66,14 +66,14 @@ The connectors are as follows:
 
 2. **CAN bus connector**:
    A 4-pin JST XH connector designed to be connected to a standard NMEA 2000 compatible DeviceNet M12 connector on the enclosure.
-   This connector can also be replaced with a 2.5 mm terminal block if so desired.
-
+   
 3. **Optocoupler I/O header**:
-   Optocoupler input and output can be provided via this interface.
-
+   Optocoupler input and output can be provided via this interface. The labels for these four pins are a bit "north" on the board: GND, Vext, IN, and OUT.
+   
 4. **1-Wire header**:
    1-Wire interface fitted with ESD protection and noise filtering as well as low-pass filtering required for longer networks.
-   No other circuitry is required for connecting 1-Wire devices to the SH-ESP32.
+   No other circuitry is required for connecting 1-Wire devices to the SH-ESP32. The 1-Wire data in pin (labeled "DQ" on the board
+   is connected to GPIO 4, so in your program, use GPIO 4 as your 1-Wire input pin.)
    
 5. **I2C header**:
    Four-pin header for connecting I2C slave devices to the SH-ESP32.
@@ -85,8 +85,9 @@ The connectors are as follows:
    This is your standard USB Micro B connector.
 
 7. **Protected Voltage**:
-   These header pads can be used to output input voltage that has been reverse polarity and surge protected.
-   Observe the polarity: it is opposite of the nearby power input connector.
+   These header pads can be used to provide input voltage that has been reverse polarity and surge protected.
+   For example, if you're powering the board with ~12V, the + pin of these pads will provide ~12V.
+   Observe the polarity: it is opposite of the nearby power input connector. 
 
 8. **Voltage link**:
    If you intend to power the board using the NMEA 2000 interface and don't need galvanic connections to external systems, you can connect these pads together to route the power from the CAN bus connector to the main power supply.
@@ -95,7 +96,8 @@ The connectors are as follows:
    This area can be used for your custom modifications.
    
 10. **Additional voltage output**:
-    Use these pads to get additional 3.3V voltage output for any modifications you need.
+    Use these pads to get additional GND and 3.3V voltage output for any modifications you need.
+    Note that despite what the silkscreen might suggest, the top three pins are all GND and the bottom three are all 3.3V.
 
 11. **GPIO header**:
     The GPIO header provides connections to all GPIO pins available on the ESP32 module.
@@ -178,6 +180,8 @@ It is commonly used for temperature sensors and similar simple sensing devices.
 
 The SH-ESP32 1-Wire implementation features ESD and RF noise filtering as well as low-pass filtering to improve network reliability.
 
+Note that the 1-Wire data pin (labeled "DQ") is physically mapped to GPIO4, so in your program, use GPIO4 for all 1-Wire data.
+
 ### <a name="opto_io"></a>Optocoupler input and output
 
 Optocoupler input and output is the recommended way to add simple digital signal input and output and sensing to different external systems.
@@ -187,7 +191,10 @@ Additionally, the SH-ESP32 opto I/O implementation should be able to drive slow-
 
 The absolute maximum voltage for the optocoupler input is 18V but it can be extended by adding an additional current-limiting resistor in series to the input.
 
-For output purposes, operating voltage must be provided by the external circuitry.
+If you provide a voltage between about 2.5V and 18V in ISO IN, you'll have the output of the input optocoupler pulled high, meaning that OPTO_IN (GPIO 35) is pulled high.
+
+Likewise, if you pull OPTO_OUT (GPIO 33) high, that will make the ISO_OUT pin be driven to the voltage you have supplied to the Vext pin.
+
 It is possible to drive small automotive relays using the optocoupler output. In that case, the solenoid pins should be connected to the Vext and OUT pins.
 
 ### GPIO header
@@ -218,7 +225,8 @@ There are traces very close to the area, however, so some care should be taken w
 ![Proto board area]({{site.baseurl}}/media/sh-esp32_r0.3.1_top_proto_area.jpg "SH-ESP32 proto board area")
 <a name="fig_proto_area"></a>*SH-ESP32 proto board area.*
 
-The round pins to the left hand side are horizontally connected and designed to make placing headers on the PCB edge easier.
+The round pads to the left hand side that are labeled 1 - 7 are horizontally connected. That is, the round pad on the left side of the label "1"
+is connected to the round pad on the right side of the label "1", and so on for 2 - 7. This is to make it easier to place a header on the PCB edge.
 You can place a header on the row at the edge and make connections to the inner row of round pads.
 
 ## Pinouts of peripherals
@@ -227,8 +235,11 @@ The ESP32 has a GPIO matrix that allows most of the digital GPIO functionality t
 This is utilized extensively on SH-ESP32, and few peripherals are mapped to their standard pins.
 The GPIO pinout of different peripherals is given below. Unlisted pins are not used by SH-ESP32 and can be utilized freely.
 
-The GPIOs having a mark in the Jumper column are by default connected to the respective peripheral and disconnected from the GPIO header.
+The GPIOs having a mark in the Jumper column are, by default, connected to the respective peripheral and disconnected from the GPIO header.
 These connections may be altered by modifying the jumpers as described in Section "[Customizing GPIO assignments](#solder_jumpers)".
+For example, GPIO4 is circled on the board, and in the table below, there is an "X" in the Jumper column, and "1-Wire data" in the
+Function column. This means that, unless you do some soldering, the pin that's labeled 4 isn't connected to anything, because the
+1-Wire data pin ("DQ") is connected to GPIO4 by default.
 
 The ADC column lists pins connected to either of the ESP32's two ADCs.
 ADC2 is used by the WiFi, so if WiFi is in use, ADC2 cannot be used.
