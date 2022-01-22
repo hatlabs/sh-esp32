@@ -264,6 +264,7 @@ Touch *N* refer to the capacitive touch sensor inputs.
 | 19      |        |     | Free | Ethernet TXD[0] |
 | 21      |        |     | Free | Ethernet TX_EN |
 | 22      |        |     | Free | Ethernet TXD[1] |
+| 23      |        |     | Free | Ethernet MDC |
 | 25      |        | 2   | Free | Ethernet RXD[0] |
 | 26      |        | 2   | Free | Ethernet RXD[1] |
 | 27      |        | 2   | Free | Ethernet CRS_DV; Touch 7 |
