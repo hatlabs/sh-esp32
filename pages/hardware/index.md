@@ -21,7 +21,7 @@ nav_order: 30
 
 The different functional blocks of SH-ESP32 are shown below.
 
-![Functional blocks]({{site.baseurl}}/media/sh-esp32_r0.3.1_top_func_annotated.jpg "Functional blocks of SH-ESP32")
+![Functional blocks](assets/sh-esp32_r0.3.1_top_func_annotated.jpg "Functional blocks of SH-ESP32")
 <a name="fig_functional_blocks"></a>*Functional blocks of SH-ESP32.*
 
 1. **The ESP32-WROOM-32 module**: 
@@ -104,7 +104,7 @@ The connectors are as follows:
     Some of the pins are used by other peripherals by default and need to be enabled
     using the solder jumpers.
 
-![Connectors]({{site.baseurl}}/media/sh-esp32_r0.3.1_top_conx_annotated.jpg "SH-ESP32 connectors")
+![Connectors](assets/sh-esp32_r0.3.1_top_conx_annotated.jpg "SH-ESP32 connectors")
 <a name="fig_conx"></a>*SH-ESP32 connectors.*
 
 ## ESP32 module
@@ -202,7 +202,7 @@ It is possible to drive small automotive relays using the optocoupler output. In
 The GPIO header can be used to access all GPIO pins of the ESP32 module.
 The silkscreen labeling next to the header refers to the GPIO numbers of the pins.
 
-![GPIO header]({{site.baseurl}}/media/sh-esp32_r0.3.1_gpio.jpg "SH-ESP32 GPIO header labels")
+![GPIO header](assets/sh-esp32_r0.3.1_gpio.jpg "SH-ESP32 GPIO header labels")
 
 Circled numbers are by default used by other peripherals and have to be connected by setting the solder jumpers (see Section "[Customizing GPIO assignments](#solder_jumpers)" for more information).
 
@@ -222,7 +222,7 @@ It can be used to add new functionality via embedded 3rd party modules or THT ci
 Layer fills or traces on the inner copper layers are on purpose avoiding the proto board area, and the area can be safely drilled or modified to accept larger components, if needed.
 There are traces very close to the area, however, so some care should be taken when modifying the pads at the border of the area.
 
-![Proto board area]({{site.baseurl}}/media/sh-esp32_r0.3.1_top_proto_area.jpg "SH-ESP32 proto board area")
+![Proto board area](assets/sh-esp32_r0.3.1_top_proto_area.jpg "SH-ESP32 proto board area")
 <a name="fig_proto_area"></a>*SH-ESP32 proto board area.*
 
 The round pads to the left hand side that are labeled 1 - 7 are horizontally connected. That is, the round pad on the left side of the label "1"
@@ -283,10 +283,10 @@ Nearly all hard-wired peripherals can be disconnected by unsoldering a 0R resist
 In a similar fashion, the solder jumpers on the bottom layer can be closed to connect the GPIO pin to the respective GPIO header pin.
 The resistor and solder jumpers are illustrated in figures below.
 
-![Jumpers, top]({{site.baseurl}}/media/sh-esp32_r0.3.1_top_jumpers_annotated.jpg "SH-ESP32 jumpers on top side")
+![Jumpers, top](assets/sh-esp32_r0.3.1_top_jumpers_annotated.jpg "SH-ESP32 jumpers on top side")
 <a name="fig_top_jumpers"></a>*Resistor jumpers on the top layer. To disconnect the GPIO pin from any peripheral, unsolder the respective jumper.*
 
-![Jumpers, bottom]({{site.baseurl}}/media/sh-esp32_r0.3.1_bottom_jumpers_annotated.jpg "SH-ESP32 jumpers on bottom side")
+![Jumpers, bottom](assets/sh-esp32_r0.3.1_bottom_jumpers_annotated.jpg "SH-ESP32 jumpers on bottom side")
 <a name="fig_bottom_jumpers"></a>*Solder jumpers on the bottom layer. To connect a GPIO pin to the GPIO header, close the solder jumper by adding a blob of solder on top of the jumper area.*
 
 For example, if don't need the CAN interface and want to reuse the GPIOs 32 and 34 on the GPIO header, desolder the resistors labeled 32 and 34 next to the ESP32 module to disconnect the module from the CAN interface.
