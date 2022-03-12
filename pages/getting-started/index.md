@@ -44,10 +44,10 @@ The whole process should ideally take only a couple of seconds, although in prac
 Try avoiding heating the pins too long, though -- the plastic connector or header body will melt and the pin will become crooked.
 Tiny deformation is not dangerous, though, as long as it doesn't prevent you from plugging the connector to the header.
 
-![Solder iron tip against pin and pad]({{site.baseurl}}/media/soldering_guide_1.jpg "Solder iron tip against pin and pad"){:width="50%"}\\
+![Solder iron tip against pin and pad](assets/soldering_guide_1.jpg "Solder iron tip against pin and pad"){:width="50%"}\\
 <a name="fig_solder_tip_pads"></a>*Heat the pins and the pads with the solder tip.*
 
-![Feed solder wire from the opposite side]({{site.baseurl}}/media/soldering_guide_2.jpg "Feed solder wire from the opposite side"){:width="50%"}\\
+![Feed solder wire from the opposite side](assets/soldering_guide_2.jpg "Feed solder wire from the opposite side"){:width="50%"}\\
 <a name="fig_feed_solder"></a>*Feed solder to the pins and the pads, not the iron tip. Although, to be fair, a tiny bit of solder on the tip may help conducting heat...*
 
 
@@ -58,7 +58,7 @@ It helps the solder flow more easily.
 
 The end result should be as shown in the following figure.
 
-![Well-soldered pins]({{site.baseurl}}/media/soldering_guide_3.jpg "Well-soldered pins"){:width="50%"}\\
+![Well-soldered pins](assets/soldering_guide_3.jpg "Well-soldered pins"){:width="50%"}\\
 <a name="fig_well_soldered_pins"></a>*An example of well soldered pins.*
 
 ## Enclosures
@@ -67,7 +67,7 @@ Boats can be nasty environments for electronics; there's salt water, high humidi
 It is highly recommended to keep the SH-ESP32 in an enclosure in "production".
 The board has been designed to fit in a 100x68x50 mm plastic waterproof enclosure as shown in the figure below, available either at the Hat Labs web store, or at any online marketplace such as Amazon, Ebay, or AliExpress.
 
-![Standard enclosure]({{site.baseurl}}/media/enclosure.jpg "Standard enclosure"){:width="50%"}\\
+![Standard enclosure](assets/enclosure.jpg "Standard enclosure"){:width="50%"}\\
 <a name="fig_enclosure"></a>*SH-ESP32 standard enclosure.*
 
 ### Mounting the board
@@ -75,7 +75,7 @@ The board has been designed to fit in a 100x68x50 mm plastic waterproof enclosur
 There is some slight variation in the location of the plastic standoffs on generic enclosures, so you might have to get creative when mounting the board.
 Plastic adhesive standoffs (3 mm hole size, height 6 mm or less, available online) such as the ones shown below, allow you to mount the board easily in any kind of an enclosure.
 
-![Adhesive PCB standoffs]({{site.baseurl}}/media/adhesive_pcb_standoffs.jpg "Adhesive PCB standoffs"){:width="50%"}\\
+![Adhesive PCB standoffs](assets/adhesive_pcb_standoffs.jpg "Adhesive PCB standoffs"){:width="50%"}\\
 <a name="fig_standoffs"></a>*Adhesive standoffs.*
 
 ### Drilling holes
@@ -89,7 +89,7 @@ Standard metal drill bits may easily bite too hard and crack the plastic.
 If you don't have a step drill bit at hand, use standard metal bits.
 Start with a small diameter and increase the diameter with small increments to limit the risk of cracking the case.
 
-![Step drill bit]({{site.baseurl}}/media/step_drill_bit.jpg "Step drill bit"){:width="50%"}\\
+![Step drill bit](assets/step_drill_bit.jpg "Step drill bit"){:width="50%"}\\
 <a name="fig_step_drill_bit"></a>*An example of step drill bits.* 
 
 Plan your hole placement in advance.
