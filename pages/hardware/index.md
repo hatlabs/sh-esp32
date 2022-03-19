@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Hardware
-nav_order: 30
+nav_order: 60
 ---
 
 

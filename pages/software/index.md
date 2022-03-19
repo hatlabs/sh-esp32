@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Software
-nav_order: 40
+nav_order: 80
 ---
 
 # Software

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Errata
-nav_order: 45
+nav_order: 150
 ---
 
 # Errata
