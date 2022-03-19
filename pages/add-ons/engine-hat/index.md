@@ -26,7 +26,7 @@ See the [Getting Started](getting-started/) page for hardware installation and c
 
 The [Hardware](hardware/) page contains more detailed information about the Engine Hat hardware.
 
-The SH-ESP32 Engine Top Hat is open hardware and the design files can be found at the [project GitHub repository](https://github.com/hatlabs/SH-ESP32-engine-hat)
+The SH-ESP32 Engine Top Hat is open hardware and the design files can be found at the [project GitHub repository](https://github.com/hatlabs/SH-ESP32-engine-hat). The product is available for purchase at [hatlabs.fi](https://hatlabs.fi/product/sh-esp32-engine-top-hat-kit/).
 
 ## Specifications
 
