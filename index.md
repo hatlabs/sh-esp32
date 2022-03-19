@@ -18,7 +18,7 @@ Examples include RPM or fuel and water tank level meters, bilge alarms, chain co
 Control interface examples include automatic engine room blower control, smart light switching, or smart fridge thermostats.
 It integrates easily both to [Signal K](https://signalk.org/) as well as NMEA 2000 and can be used as a NMEA 2000 gateway device.
 
-SH-ESP32 can be plugged directly to any 12V or 24V power system. 
+SH-ESP32 can be plugged directly to any 12V or 24V power system.
 Special emphasis has been placed on electrical compliance: the board can handle most power surges present on an automotive or marine 12V or 24V power system.
 Equally importantly, the inputs and outputs have protection for electrostatic discharges (static electricity), and are designed to not produce electromagnetic emissions (disturb other sensitive devices such as VHF radios or GPS antennas), and to be protected against electromagnetic interference (will not be disturbed by a VHF, SSB, or a radar).
 

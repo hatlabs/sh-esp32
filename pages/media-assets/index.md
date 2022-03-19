@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Media assets
-nav_order: 60
+nav_order: 200
 ---
 
 # Media assets

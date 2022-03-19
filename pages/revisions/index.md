@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Hardware revisions
-nav_order: 43
+nav_order: 120
 ---
 
 # Hardware revisions
