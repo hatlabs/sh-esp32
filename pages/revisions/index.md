@@ -47,3 +47,10 @@ Changes to 1.0.0:
 
 Schematics: [SH-ESP32-2.0.0-schema.pdf](assets/SH-ESP32-2.0.0-schema.pdf)
 
+## Version 2.0.1
+
+Changes to 2.0.1:
+
+- Minor part changes to improve part availability
+
+Schematics: [SH-ESP32-2.0.1-schema.pdf](assets/SH-ESP32-2.0.1-schema.pdf)
