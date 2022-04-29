@@ -74,6 +74,11 @@ The digital inputs can be used to measure tachometer RPMs or other repetitive pu
 Connect them like alarms, with the hot lead going to the top row and ground to the bottom.
 Both alternator W terminals and inductive tachometer senders such as the ones used on Yanmar engines can be directly connected.
 
+**NOTE:** If you are measuring RPM using an alternator W terminal, you might be better off leaving the GND wire unconnected.
+When charging, the alternator GND is likely to be at a different voltage than the battery negative terminal (your boat's typical reference GND).
+Connecting a negative signal wire from the alternator to the GND pin on the engine hat would likely cause a ground loop:
+current flowing on the GND wire due to the voltage difference, causing possibly a lot of low-frequency noise.
+
 Some tachometer senders such as the alternator W terminals are notoriously noisy, resulting in unreliable measurements.
 In such cases, the reported RPM value usually is much higher than the actual RPM.
 The Engine Hat includes an optional low-pass filter with a 2.3 kHz cutoff frequency to help filter out such noise.
