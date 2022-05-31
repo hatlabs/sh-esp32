@@ -257,6 +257,10 @@ If that doesn't happen, open the browser and navigate to http://192.168.4.1/.
 Select the Wi-Fi network you normally use and enter the password.
 The device should now automatically connect to the network.
 
+>Note: if you have set the Wifi settings once, there is at this moment not an easy way to change or reset those Wifi settings. 
+You should use the PlatformIO's "Erase flash" command and upload the firmware again.
+This is being [tracked as a future update](https://github.com/SignalK/SensESP/issues/587).
+
 If you have automatic service discovery correctly configured, you should immediately have a device access request appear on the Signal K server web UI:
 
 ![Device Access Request](media/device_access_request.png "Device Access Request"){:width="50%"}
