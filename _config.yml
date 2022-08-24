@@ -27,7 +27,7 @@
 # For GitHub Pages deployment
 
 remote_theme: pmarsceill/just-the-docs
-url: "https://hatlabs.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://docs.hatlabs.fi" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 
