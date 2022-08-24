@@ -1,6 +1,6 @@
 # SH-ESP32 documentation repository
 
-This is the SH-ESP32 Jekyll documentation repository that is rendered to project documentation available at https://hatlabs.github.io/sh-esp32/.
+This is the SH-ESP32 Jekyll documentation repository that is rendered to project documentation available at https://docs.hatlabs.fi/sh-esp32/.
 SH-ESP32 is an ESP32 development board designed for the marine environment. It is available for purchase at https://hatlabs.fi.
 
 ## Contributing
