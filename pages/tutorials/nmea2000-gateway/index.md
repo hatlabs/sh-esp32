@@ -2,7 +2,7 @@
 layout: default
 title: NMEA 2000 USB gateway
 parent: Tutorials and Examples
-grand_parent: Home
+#grand_parent: Home
 nav_order: 10
 ---
 

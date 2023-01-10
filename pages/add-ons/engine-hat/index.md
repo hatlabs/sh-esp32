@@ -2,9 +2,9 @@
 layout: default
 title: SH-ESP32 Engine Top Hat
 parent: Add-on hardware
-grand_parent: Home
-nav_order: 10
 has_children: true
+#grand_parent: Home
+nav_order: 10
 ---
 
 # SH-ESP32 Engine Top Hat

@@ -2,7 +2,7 @@
 layout: default
 title: 1-Wire temperature sensing
 parent: Tutorials and Examples
-grand_parent: Home
+#grand_parent: Home
 nav_order: 20
 ---
 
