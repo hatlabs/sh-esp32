@@ -68,6 +68,9 @@ The sections below documents how the inputs are mapped to the ESP32 GPIO pins.
 ### Analog inputs
 
 Analog inputs are read using the ADS1115 analog-to-digital converter.
+
+The raw input signal is scaled using a voltage divider down to voltage levels accepted by the ADC. The scaling factor is 2.048/29.
+
 The ADS1115 uses the I2C bus for communicating with the ESP32.
 The default I2C address is 0x4b, but that can be changed using the solder jumper pads on the bottom side of the PCB.
 
