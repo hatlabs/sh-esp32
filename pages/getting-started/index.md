@@ -35,7 +35,7 @@ It is highly recommended to use an iron with controllable temperature.
 Flux can also be helpful.
 SH-ESP32 has ground plane on up to three of the four PCB layers.
 They conduct heat efficiently away from the solder joint -- to solder the connectors, use as large solder tip as you can easily work with.
-It also helps to set the iron temperature somewhat higher than usually; 370°C or 700°F is a good starting point.
+A good starting point for the soldering iron temperature is 320°C. If that doesn't work well, increase the temperature gradually.
 
 To solder the connectors, place them on the board one by one and use some tape to hold them in place when you turn the PCB around for soldering. Male header pins can be pushed through the tape for even easier manipulation.
 
