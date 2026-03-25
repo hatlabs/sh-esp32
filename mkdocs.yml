@@ -1,0 +1,96 @@
+site_name: Sailor Hat with ESP32
+site_url: https://docs.hatlabs.fi/sh-esp32
+site_description: Documentation for the Sailor Hat with ESP32 (SH-ESP32), a powerful microcontroller development board for the marine environment
+site_author: Hat Labs
+
+repo_url: https://github.com/hatlabs/sh-esp32
+repo_name: hatlabs/sh-esp32
+edit_uri: edit/main/sh-esp32-docs/docs/
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  logo: assets/hat_labs_logo.svg
+  favicon: assets/hat_labs_logo.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.action.edit
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - md_in_html
+  - footnotes
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  analytics:
+    provider: google
+    property: G-F3KDPEBJEF
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hatlabs
+
+nav:
+  - Introduction: index.md
+  - Getting Started: getting-started/index.md
+  - Hardware: hardware/index.md
+  - Software: software/index.md
+  - Tutorials:
+    - Overview: tutorials/index.md
+    - NMEA 2000 USB Gateway: tutorials/nmea2000-gateway/index.md
+    - 1-Wire Temperature Sensing: tutorials/onewire-temperature/index.md
+  - Add-on Hardware:
+    - Overview: add-ons/index.md
+    - Engine Top Hat:
+      - Overview: add-ons/engine-hat/index.md
+      - Getting Started: add-ons/engine-hat/getting-started/index.md
+      - Hardware: add-ons/engine-hat/hardware/index.md
+  - Appendices:
+    - Hardware Revisions: revisions/index.md
+    - Errata: errata/index.md
+    - Media Assets: media-assets/index.md
+    - Acknowledgments: acknowledgments/index.md

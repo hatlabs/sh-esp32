@@ -1,0 +1,53 @@
+/* Hat Labs branding overrides — light mode */
+
+:root {
+  --md-primary-fg-color: #13294b;
+  --md-primary-fg-color--light: #273f65;
+  --md-primary-fg-color--dark: #061732;
+  --md-accent-fg-color: #40587d;
+}
+
+/* Hat Labs branding overrides — dark mode:
+   Keep dark navy header, but use lighter accent for links/text on dark backgrounds */
+[data-md-color-scheme="slate"] {
+  --md-accent-fg-color: #7b9cc7;
+  --md-typeset-a-color: #7b9cc7;
+}
+
+.md-header__button.md-logo img {
+  height: 2rem;
+  width: 2rem;
+}
+
+/* Hat Labs top navigation bar */
+.md-banner {
+  background: var(--md-primary-fg-color--dark);
+}
+
+.hat-labs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+}
+
+.hat-labs-nav a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}
+
+.hat-labs-nav a:hover {
+  color: #fff;
+}
+
+/* Make nav section headers visually distinct from page links */
+.md-nav__item--section > label.md-nav__link {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+  margin-top: 1.2rem;
+}
