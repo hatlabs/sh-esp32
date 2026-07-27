@@ -30,6 +30,11 @@ theme:
 
 plugins:
   - search
+  - print-site:
+      add_cover_page: true
+      add_print_site_banner: true
+      add_to_navigation: false
+      print_page_title: "Sailor Hat with ESP32"
 
 markdown_extensions:
   - admonition

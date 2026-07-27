@@ -3,4 +3,8 @@ name = "sh-esp32-docs"
 version = "0.1.0"
 description = "Sailor Hat with ESP32 documentation"
 requires-python = ">=3.11"
-dependencies = ["mkdocs-material>=9.5", "click<8.3"]
+dependencies = [
+    "mkdocs-material>=9.5",
+    "click<8.3",
+    "mkdocs-print-site-plugin>=2.8",
+]

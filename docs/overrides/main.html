@@ -8,3 +8,12 @@
   <a href="https://github.com/hatlabs/discussions/discussions">Discussion</a>
 </nav>
 {% endblock %}
+
+{% block content %}
+{% if page.url_to_print_page %}
+  <a href="{{ page.url_to_print_page }}" title="Print or save as PDF" class="md-content__button md-icon">
+    {% include ".icons/material/printer.svg" %}
+  </a>
+{% endif %}
+{{ super() }}
+{% endblock %}
