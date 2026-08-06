@@ -5,7 +5,7 @@ site_author: Hat Labs
 
 repo_url: https://github.com/hatlabs/sh-esp32
 repo_name: hatlabs/sh-esp32
-edit_uri: edit/main/sh-esp32-docs/docs/
+edit_uri: edit/main/docs/
 
 theme:
   name: material
@@ -30,11 +30,41 @@ theme:
 
 plugins:
   - search
-  - print-site:
-      add_cover_page: true
-      add_print_site_banner: true
-      add_to_navigation: false
-      print_page_title: "Sailor Hat with ESP32"
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+        - locale: fi
+          name: Suomi
+          build: true
+          site_name: "Sailor Hat with ESP32"
+          site_description: SH-ESP32:n käyttöopas — ESP32-pohjainen kehityskortti veneisiin
+          admonition_translations:
+            note: Huomio
+            warning: Varoitus
+            tip: Vinkki
+            info: Tietoa
+            danger: Vaara
+            example: Esimerkki
+          nav_translations:
+            Introduction: Johdanto
+            Getting Started: Aloitusopas
+            Hardware: Laitteisto
+            Software: Ohjelmisto
+            Tutorials: Ohjeet
+            Overview: Yleiskatsaus
+            NMEA 2000 USB Gateway: NMEA 2000 -USB-yhdyskäytävä
+            1-Wire Temperature Sensing: 1-Wire-lämpötilamittaus
+            Add-on Hardware: Lisälaitteet
+            Engine Top Hat: Engine Top Hat
+            Appendices: Liitteet
+            Hardware Revisions: Laitteistoversiot
+            Errata: Tunnetut virheet
+            Media Assets: Media-aineisto
+            Acknowledgments: Kiitokset
 
 markdown_extensions:
   - admonition
