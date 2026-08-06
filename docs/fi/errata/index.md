@@ -1,3 +1,7 @@
+---
+translated_from: 35671f1b525327fd13864d1a07c971b5c93752e1
+---
+
 # Tunnetut virheet
 
 Tällä sivulla luetellaan kaikki tunnetut laitteistoviat SH-ESP32:n eri versioissa.

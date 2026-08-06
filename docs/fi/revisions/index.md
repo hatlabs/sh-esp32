@@ -1,3 +1,7 @@
+---
+translated_from: 3b83f2f7ac97ee531b9280fa6ad26f439fe7d588
+---
+
 # Laitteistoversiot
 
 ## Johdanto

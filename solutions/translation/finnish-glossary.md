@@ -204,7 +204,7 @@ them.
 | English | Finnish | Note |
 |:--------|:--------|:-----|
 | power source | virransyöttö | |
-| input voltage range | syöttöjännitealue | |
+| input voltage range | tulojännitealue | **A deliberate divergence from HALPI2 and HALMET, which use `syöttöjännitealue`. Do not harmonise.** There the phrase names the supply the board is fed from. Every occurrence on SH-ESP32 names the range a signal input accepts — `-30V to +30V`, `0-29V`, `0-30V` on the Engine Hat's analog and digital channels. `syöttöjännite` is a supply voltage, so it would tell the reader the opposite of what the sentence means. |
 | polarity | napaisuus | |
 | positive (+) / negative (−) | plus (+) / miinus (−) | |
 | fuse | sulake | |
@@ -483,7 +483,7 @@ be changed here alone.
 | to upload (firmware) | siirtää | The step after building |
 | serial monitor | sarjaporttimonitori | |
 | access request | käyttöoikeuspyyntö | Signal K's device authorisation |
-| dashboard | instrumenttipaneeli | Shared |
+| dashboard | koontinäyttö | Shared. The inherited row describes Homarr's view; Signal K's server overview is the same kind of page and takes the same word. |
 
 ### A note on the first-person tutorials
 

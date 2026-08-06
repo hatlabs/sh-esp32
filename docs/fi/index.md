@@ -1,3 +1,7 @@
+---
+translated_from: 834be651f7ac729e1ea5c209458cee33a551f7b9
+---
+
 # Johdanto
 
 Sailor Hat with ESP32 (SH-ESP32) on tehokas mikro-ohjaimen kehityskortti veneympäristöön.

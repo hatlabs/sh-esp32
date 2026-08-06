@@ -1,3 +1,7 @@
+---
+translated_from: 2409b481ada0cca8731f54bcc0dc22fb28d05756
+---
+
 # SH-ESP32 Engine Top Hat
 
 ![SH-ESP32 Engine Top Hatin renderöinti](assets/EH_perspective.jpg "SH-ESP32 Engine Top Hatin renderöinti")

@@ -1,3 +1,7 @@
+---
+translated_from: 05b8fbc75875552ea33cf40d6d3c17e9549b1388
+---
+
 # Media-aineisto
 
 Täältä löydät korkearesoluutioisia valokuvia ja muita kuvia, jotka sopivat julkaisukäyttöön.

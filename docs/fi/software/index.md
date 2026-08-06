@@ -1,3 +1,7 @@
+---
+translated_from: fa07740d4fb16343c00e112d000a042af36ffec4
+---
+
 # Ohjelmisto
 
 ## Johdanto
