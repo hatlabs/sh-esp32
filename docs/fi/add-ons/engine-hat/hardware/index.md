@@ -45,8 +45,8 @@ Engine Hatin liittimet näkyvät alla.
    Ylärivi on analogiatulon signaalinastoille, alarivi maadoituskytkennöille.
 4. Hyppyliitin vakiovirtalähteen käyttöönottoon kullekin analogiatulokanavalle.
 5. I2C-läpivientinaarasliitin näyttömoduulin tai muiden I2C-laitteiden kytkemiseen.
-6. I2C-urosliitin emokorttiin kytkemistä varten (piirilevyn alapuolella).
-7. GPIO-naarasliitin digitaalitulojen kytkemiseen emokorttiin (alapuolella).
+6. I2C-urosliitin pääkorttiin kytkemistä varten (piirilevyn alapuolella).
+7. GPIO-naarasliitin digitaalitulojen kytkemiseen pääkorttiin (alapuolella).
 
 ## Nastajärjestys
 
@@ -72,10 +72,10 @@ I2C-oletusosoite on 0x4b, mutta sen voi vaihtaa piirilevyn alapuolella olevilla 
 
 Huomaa, että SH-ESP32 käyttää GPIO 16:ta I2C:n SDA-linjalle ja GPIO 17:ää I2C:n SCL-linjalle. Nämä arvot poikkeavat Arduinon ESP32-kehyksen oletuksista, ja mahdollinen yleinen esimerkkikoodi on muutettava vastaavasti.
 
-## Suunnittelutiedostot ja piirikaaviot
+## Suunnittelutiedostot ja kytkentäkaaviot
 
 SH-ESP32 Engine Top Hatin suunnittelutiedostot löytyvät [projektin GitHub-repositoriosta](https://github.com/hatlabs/SH-ESP32-engine-hat).
 
-Eri laitteistoversioiden piirikaaviot löytyvät täältä:
+Eri laitteistoversioiden kytkentäkaaviot löytyvät täältä:
 
 - [SH-ESP32 Engine Top Hat v1.0.0](assets/Engine_Hat_Schematics_v1.0.0.pdf)

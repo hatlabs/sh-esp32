@@ -423,11 +423,14 @@ be changed here alone.
 | English | Finnish | Note |
 |:--------|:--------|:-----|
 | development board | kehityskortti | Shared with HALMET |
+| schematics | kytkentäkaavio | Shared with the sibling repositories, which use it five times and `piirikaavio` never |
+| main board | pääkortti | The SH-ESP32 seen from an add-on board. Not `emolevy` — that is reserved for HALPI2's carrier board — and not `kehityskortti`, which names the product rather than its role under a hat |
 | Engine Top Hat | Engine Top Hat | Product name, never translated; `Engine Hat` is the short form the source also uses |
 | OLED display | OLED-näyttö | |
 | enclosure lid | kotelon kansi | |
 | drill template | porausmalline | |
 | panel connector | paneeliliitin | Shared with HALMET |
+| power connector | virtaliitin | Shared with HALPI2 and SH-RPi, which use it ten times between them and `jänniteliitin` never. The board's *power input* stays `jännitetulo`, matching SH-RPi — the input is named by its voltage, the connector by what it carries. |
 | M12 panel connector | M12-paneeliliitin | The NMEA 2000 connector |
 | Micro USB panel connector | Micro USB -paneeliliitin | Multi-word name takes the space before the hyphen |
 | grommet | läpivientikumi | Distinct from `läpivientiholkki`, the threaded gland |

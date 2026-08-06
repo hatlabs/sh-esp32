@@ -60,7 +60,7 @@ Ei haittaa, vaikka teippaisit mallineen päältä: ainakin maalarinteippi on rii
 Kun malline on paikallaan, päätä mihin haluat liittimet.
 Jos GPIO-liitintä ei ole asennettu, SH-ESP32:n pohjoisreunalla on runsaasti tilaa liittimille. Länsireuna on myös melko vapaa. Itäpuolelle liittimet mahtuvat helposti, mutta kaakkoiskulmaan sijoitettu liitin tukkii USB:n.
 
-Halusin asentaa laitteeni pystyyn niin, että jänniteliitin osoittaa alaspäin ja lämpötila-anturien liittimet oikealle. Tulin vain tehneeksi sen virheen, että tukin USB-liittimen. Minulle taitavat siis jäädä [langattomat päivitykset](https://docs.platformio.org/en/latest/platforms/espressif32.html#over-the-air-ota-update)...
+Halusin asentaa laitteeni pystyyn niin, että virtaliitin osoittaa alaspäin ja lämpötila-anturien liittimet oikealle. Tulin vain tehneeksi sen virheen, että tukin USB-liittimen. Minulle taitavat siis jäädä [langattomat päivitykset](https://docs.platformio.org/en/latest/platforms/espressif32.html#over-the-air-ota-update)...
 
 ![SH-ESP32:n kotelo porattuine reikineen](media/enclosure_with_holes.jpg "SH-ESP32:n kotelo porattuine reikineen"){ width="50%" }
 
@@ -90,7 +90,7 @@ Kolmanneksi: jos onnistuisit asentamaan liittimet, miten saisit mutterin takaisi
 Asenna sen sijaan ensin liittimet, jatka sitten johtimet ja lisää kutistesukkaa.
 
 Jos haluat kytkeä laitteiston NMEA 2000:een, lisää M12-paneeliliitin [NMEA 2000 -USB-yhdyskäytävän opastuksen](../nmea2000-gateway/index.md) mukaisesti.
-Vaihtoehtoisesti, jos elät tulevaisuudessa ja rakennat pelkän Signal K -kokoonpanon, käytä kotelopaketin mukana tulevaa SP13-jänniteliitintä.
+Vaihtoehtoisesti, jos elät tulevaisuudessa ja rakennat pelkän Signal K -kokoonpanon, käytä kotelopaketin mukana tulevaa SP13-virtaliitintä.
 Tee siinä tapauksessa johdonmukaisuuden vuoksi maasta ensimmäinen nasta ja 12/24 V:sta toinen nasta.
 
 NMEA 2000 -käyttöä varten SH-ESP32-laitteelle on myös syötettävä jännite. Voit tehdä sen jatkamalla jännitejohtimet ja kytkemällä ne jännitenastoihin tai kytkemällä alla olevassa valokuvassa näkyvän johdinsillan:
@@ -111,7 +111,7 @@ Liitinrivit muodostavat eräänlaiset kokoomakiskot kullekin 1-Wire-nastalle.
 ### Kokoonpano
 
 Kun 1-Wiren dataliittimet ovat paikallaan, kiikuta SH-ESP32-kortti koteloon ja kiinnitä se pienillä 3 × 6 mm:n ruuveilla.
-Asenna sitten jänniteliitin (tai NMEA 2000 -liitin) ja kytke kaikki korttiin [vastaaviin liittimiin](../../hardware/index.md#liittimet).
+Asenna sitten virtaliitin (tai NMEA 2000 -liitin) ja kytke kaikki korttiin [vastaaviin liittimiin](../../hardware/index.md#liittimet).
 
 Jos aiot käyttää OLED-näyttöä, nyt on aika asentaa se.
 

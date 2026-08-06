@@ -52,7 +52,7 @@ Alla oleva kuva havainnollistaa SH-ESP32:n eri liittimiä.
 Liittimet ovat seuraavat:
 
 1. **Jänniteliitin**:
-   JST XH -yhteensopiva jänniteliitin.
+   JST XH -yhteensopiva virtaliitin.
    Samaan juotoskuvioon voi asentaa 2,5 mm:n riviliittimen.
 
 2. **CAN-väyläliitin**:
@@ -131,7 +131,7 @@ Käyttäjän ohjelmat voivat ohjata sitä osoittamaan laitteen tilaa.
 
 ### USB
 
-USB-liitännällä voi ohjelmoida ESP32-moduulin uudelleen ja viestiä käyttäjän sovelluksen kanssa. Kytkettynä se myös syöttää kortille tehon. Korttia voi turvallisesti syöttää samanaikaisesti sekä pääjänniteliittimestä että USB:stä — tasasuuntausdiodit varmistavat, että käytössä on vain suurijännitteisin syöttö.
+USB-liitännällä voi ohjelmoida ESP32-moduulin uudelleen ja viestiä käyttäjän sovelluksen kanssa. Kytkettynä se myös syöttää kortille tehon. Korttia voi turvallisesti syöttää samanaikaisesti sekä päävirtaliittimestä että USB:stä — tasasuuntausdiodit varmistavat, että käytössä on vain suurijännitteisin syöttö.
 
 USB-liitäntä on toteutettu edullisella CH340C USB–sarjaporttimuunninpiirillä.
 Se emuloi tavanomaista sarjaporttiliitäntää jopa 2 Mbit/s:n siirtonopeuksilla.
