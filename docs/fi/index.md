@@ -20,7 +20,7 @@ Sähköiseen yhteensopivuuteen on kiinnitetty erityistä huomiota: kortti kestä
 Yhtä tärkeää on, että tulot ja lähdöt on suojattu sähköstaattisilta purkauksilta (staattiselta sähköltä), ne on suunniteltu tuottamaan mahdollisimman vähän sähkömagneettisia päästöjä (eivät häiritse muita herkkiä laitteita, kuten VHF-radioita tai GPS-antenneja) ja ne on suojattu sähkömagneettisilta häiriöiltä (VHF, SSB tai tutka ei häiritse niitä).
 
 SH-ESP32 on avointa laitteistoa, lisensoitu Creative Commons Nimeä-JaaSamoin 4.0 Kansainvälinen -lisenssillä.
-Voit tehdä siitä omia sovelluksiasi, kunhan jaat ne vastaavin ehdoin!
+Voit tehdä omia SH-ESP32-johdannaisiasi, kunhan jaat ne vastaavin ehdoin!
 
 ## Laitteiston hankkiminen
 

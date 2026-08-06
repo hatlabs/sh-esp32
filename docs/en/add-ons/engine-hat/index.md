@@ -28,7 +28,7 @@ The SH-ESP32 Engine Top Hat is open hardware and the design files can be found a
   - optional 1st order low-pass filter with cutoff frequency of 2.3 kHz
 - 4 analog input channels (A-D)
   - input voltage range: 0-29V
-  - analog-to-digital converter: AD1115
+  - analog-to-digital converter: ADS1115
   - ADC resolution: 16-bit
   - optional constant-current source with 10 mA current
   - resistance measurement range: 0-300 ohm

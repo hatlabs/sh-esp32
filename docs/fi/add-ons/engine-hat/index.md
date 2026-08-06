@@ -1,5 +1,5 @@
 ---
-translated_from: 2409b481ada0cca8731f54bcc0dc22fb28d05756
+translated_from: 8531d7690cdc2f92f550dea72d6d7a479030e140
 ---
 
 # SH-ESP32 Engine Top Hat
@@ -32,7 +32,7 @@ SH-ESP32 Engine Top Hat on avointa laitteistoa, ja suunnittelutiedostot löytyv�
   - valinnainen ensimmäisen asteen alipäästösuodin, rajataajuus 2,3 kHz
 - 4 analogiatulokanavaa (A–D)
   - tulojännitealue: 0–29 V
-  - AD-muunnin: AD1115
+  - AD-muunnin: ADS1115
   - AD-muuntimen erotuskyky: 16 bittiä
   - valinnainen vakiovirtalähde, virta 10 mA
   - vastusmittausalue: 0–300 ohmia

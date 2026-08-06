@@ -45,7 +45,7 @@ Analogiatulojen vakiovirtalähde on otettava erikseen käyttöön asettamalla hy
 ### Tankkianturien kytkentä olemassa olevien mittarien kanssa
 
 Jos haluat pitää olemassa olevan polttoainetankin mittarin kytkettynä, voit turvallisesti kytkeä Engine Hatin sen rinnalle.
-Tässä tapauksessa alkuperäinen mittari kuitenkin tuottaa mittausvirran, etkä **saa** ottaa vakiovirtalähdettä käyttöön.
+Tässä tapauksessa alkuperäinen mittari kuitenkin tuottaa mittausvirran, **etkä saa** ottaa vakiovirtalähdettä käyttöön.
 Tällöin Engine Hat tekee yksinkertaisen jännitemittauksen.
 
 ## Jännitteiden mittaus

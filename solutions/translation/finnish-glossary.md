@@ -399,6 +399,7 @@ this heading are shared with HALPI2 and should not be changed here alone.
 | download mode | lataustila | ESP32 flashing mode |
 | user-programmable LED | käyttäjän ohjattava LED | |
 | open hardware | avoin laitteisto | |
+| derivative (of an open design) | johdannainen | The share-alike obligation attaches to a derived *design*, not to an application built with the board, so `sovellus` here would understate what the licence requires |
 
 ### A note on `liitin`
 

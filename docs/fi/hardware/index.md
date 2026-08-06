@@ -25,7 +25,7 @@ SH-ESP32:n eri toimintolohkot näkyvät alla.
 
 3. **CAN-väylän lähetinvastaanotin**:
    SH-ESP32:ssa on erotettu CAN-lähetinvastaanotin, joka noudattaa NMEA 2000 -määrittelyä.
-   CAN-väyläpiiristöön kuuluu myös päälähteen kaltainen suojaus sekä 5 V:n lineaarisäädin, joka syöttää lähetinvastaanottimelle tehon NMEA 2000 -väylästä riippumatta.
+   CAN-väyläpiiristöön kuuluu myös päälähteen kaltainen suojaus sekä 5 V:n lineaarisäädin, joka syöttää lähetinvastaanottimen tehon NMEA 2000 -väylästä kortin omasta teholähteestä riippumatta.
 
 4. **Optoerottimen tulo ja lähtö**:
    Optoerotintuloilla ja -lähdöillä SH-ESP32:n voi kytkeä turvallisesti häiriöisiin ulkoisiin tuloihin tai lähtöihin, kuten laturin signaaliin tai releisiin.
@@ -229,9 +229,9 @@ ESP32:ssa on GPIO-matriisi, joka sallii useimpien digitaalisten GPIO-toimintojen
 Tätä hyödynnetään SH-ESP32:ssa laajasti, ja harva oheislaite on kytketty vakionastoihinsa.
 Eri oheislaitteiden GPIO-nastajärjestys on esitetty alla. Luettelemattomat nastat eivät ole SH-ESP32:n käytössä, ja niitä voi käyttää vapaasti.
 
-Ne GPIO-nastat, joilla on merkintä Juotossilta-sarakkeessa, on oletuksena kytketty vastaavaan oheislaitteeseen ja irrotettu GPIO-liittimestä.
+Ne GPIO-nastat, joilla on merkintä Silta-sarakkeessa, on oletuksena kytketty vastaavaan oheislaitteeseen ja irrotettu GPIO-liittimestä.
 Näitä kytkentöjä voi muuttaa muokkaamalla siltoja osiossa "[GPIO-määritysten mukauttaminen](#gpio-maaritysten-mukauttaminen)" kuvatulla tavalla.
-Esimerkiksi GPIO4 on ympyröity kortilla, ja alla olevassa taulukossa Juotossilta-sarakkeessa on "X" ja Toiminto-sarakkeessa "1-Wire-data". Tämä tarkoittaa, että ellet tee juotostyötä, numerolla 4 merkitty nasta ei ole kytketty mihinkään, koska
+Esimerkiksi GPIO4 on ympyröity kortilla, ja alla olevassa taulukossa Silta-sarakkeessa on "X" ja Toiminto-sarakkeessa "1-Wire-data". Tämä tarkoittaa, että ellet tee juotostyötä, numerolla 4 merkitty nasta ei ole kytketty mihinkään, koska
 1-Wiren datanasta ("DQ") on oletuksena kytketty GPIO4:ään.
 
 ADC-sarake luettelee nastat, jotka on kytketty jompaankumpaan ESP32:n kahdesta AD-muuntimesta.
@@ -239,8 +239,8 @@ ADC2 on WiFin käytössä, joten jos WiFi on käytössä, ADC2:ta ei voi käytt�
 
 Merkintä Touch *N* viittaa kapasitiivisen kosketusanturin tuloihin.
 
-| GPIO #  | Juotossilta | ADC | Toiminto | Valinnainen toiminto |
-| ------: | :---------: | --: | -------- | -------------------- |
+| GPIO #  | Silta | ADC | Toiminto | Valinnainen toiminto |
+| ------: | :---: | --: | -------- | -------------------- |
 | 00      |        | 2   | BOOT | Ethernet REF_CLK; Touch 1 |
 | 01      | x      |     | Sarjaportti TXD0 |  |
 | 02      |        | 2   | Sininen LED | Touch 2 |
