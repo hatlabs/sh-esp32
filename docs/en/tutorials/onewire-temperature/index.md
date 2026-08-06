@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This tutorial will walk you through creating a temperature sensing device that can be used for example to measure engine oil, coolant, and wet exhaust temperatures of of any engine that doesn't already report these temperatures to Signal K or your N2K network.
+This tutorial will walk you through creating a temperature sensing device that can be used for example to measure engine oil, coolant, and wet exhaust temperatures of any engine that doesn't already report these temperatures to Signal K or your N2K network.
 My own engine is a Yanmar 3GM30F but the approach is completely generic and can be adapted to any engine.
 I have had a similar setup for several years and it gives me an extra peace of mind: 
 I would get an early alarm if the temperature would begin to rise (I've had coolant issues in the past), and also if I ever would forget to open the water intake seacock, I would get an alarm of rising exhaust temperature before anything irreversible could happen.
@@ -187,7 +187,7 @@ Modifying the NMEA 2000 output is, due to the nature of the protocol, a somewhat
 NMEA 2000 sends data in [fixed-format messages](https://en.wikipedia.org/wiki/NMEA_2000#Message_format_and_parameter_group_numbers_(PGNs)).
 The message type is defined by its PGN (Parameter Group Number).
 Each PGN can contain one or more pieces of data.
-For example, PGN 130312 "Environmental Parameters" includes water temperature, outside ambient air temperature, and atmospheric pressure all in on message.
+For example, PGN 130312 "Environmental Parameters" includes water temperature, outside ambient air temperature, and atmospheric pressure all in one message.
 In most PGNs, individual values can also be marked as undefined -- in the above example, if we only have air temperature, we can avoid sending bogus data by marking water temperature and atmospheric pressure as undefined.
 
 One good source for PGNs and PGN structures is the `canboat` library [PGN definition header file](https://github.com/canboat/canboat/blob/master/analyzer/pgn.h).
@@ -301,7 +301,7 @@ Similar to the coolant temperature sensor, I attached it with silicone tape and 
 For all sensors, take care to route the cables neatly. 
 There should be some slack to allow for engine vibrations, but otherwise the cables should be mounted on some fixtures every 30 cm (1 ft) or so.
 At no point should the cable be able to chafe against the vibrating engine. 
-Also, be careful not to allow the cable touch very hot parts of the engine such as the exhaust manifold.
+Also, be careful not to allow the cable to touch very hot parts of the engine such as the exhaust manifold.
 
 Congratulations! 
 You now have a fancy new temperature sensor for your engine, and skills to build other sensors as well!

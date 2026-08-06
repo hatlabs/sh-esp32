@@ -2,7 +2,7 @@
 
 ## Analog Inputs
 
-The Engine Hat includes four analog input channels, implemented using Texas Instruments' AD1115 analog to digital converter.
+The Engine Hat includes four analog input channels, implemented using Texas Instruments' ADS1115 analog to digital converter.
 The analog inputs can be individually configured as passive voltage sensors or active resistance sensors.
 As voltage sensors the input channels sense a 0-29V voltage range with a 16-bit resolution.
 As resistance sensors, they implement a 10 mA constant-current source to read sensor resistances between 0-300 ohm.
@@ -46,7 +46,7 @@ The Engine Hat connectors are shown below.
 
 ## Pinout
 
-The sections below documents how the inputs are mapped to the ESP32 GPIO pins.
+The sections below document how the inputs are mapped to the ESP32 GPIO pins.
 
 ### Digital inputs
 
@@ -70,7 +70,7 @@ Note that the SH-ESP32 uses GPIO 16 for the I2C SDA line and GPIO 17 for the I2C
 
 ## Design Files and Schematics
 
-SH-ESP32 Engine Top Hap design files can be found at the [project GitHub repository](https://github.com/hatlabs/SH-ESP32-engine-hat).
+SH-ESP32 Engine Top Hat design files can be found at the [project GitHub repository](https://github.com/hatlabs/SH-ESP32-engine-hat).
 
 Schematics for different hardware revisions can be found here:
 

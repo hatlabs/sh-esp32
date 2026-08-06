@@ -51,3 +51,11 @@
   color: var(--md-default-fg-color--light);
   margin-top: 1.2rem;
 }
+
+/* The theme caps the open language selector at 10rem, which fits five of the
+   ten languages and silently scrolls the rest. 24rem clears thirteen; the
+   viewport term keeps the menu on screen on a short display. */
+.md-select:focus-within .md-select__inner,
+.md-select:hover .md-select__inner {
+  max-height: min(24rem, 75vh);
+}
