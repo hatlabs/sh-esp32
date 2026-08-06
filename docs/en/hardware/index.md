@@ -59,8 +59,8 @@ The connectors are as follows:
    
 4. **1-Wire header**:
    1-Wire interface fitted with ESD protection and noise filtering as well as low-pass filtering required for longer networks.
-   No other circuitry is required for connecting 1-Wire devices to the SH-ESP32. The 1-Wire data in pin (labeled "DQ" on the board
-   is connected to GPIO 4, so in your program, use GPIO 4 as your 1-Wire input pin.)
+   No other circuitry is required for connecting 1-Wire devices to the SH-ESP32. The 1-Wire data in pin (labeled "DQ" on the board)
+   is connected to GPIO 4, so in your program, use GPIO 4 as your 1-Wire input pin.
    
 5. **I2C header**:
    Four-pin header for connecting I2C slave devices to the SH-ESP32.
@@ -284,7 +284,7 @@ The resistor and solder jumpers are illustrated in figures below.
 <figcaption>Solder jumpers on the bottom layer. To connect a GPIO pin to the GPIO header, close the solder jumper by adding a blob of solder on top of the jumper area.</figcaption>
 </figure>
 
-For example, if don't need the CAN interface and want to reuse the GPIOs 32 and 34 on the GPIO header, desolder the resistors labeled 32 and 34 next to the ESP32 module to disconnect the module from the CAN interface.
+For example, if you don't need the CAN interface and want to reuse the GPIOs 32 and 34 on the GPIO header, desolder the resistors labeled 32 and 34 next to the ESP32 module to disconnect the module from the CAN interface.
 Then close the solder jumpers labeled 32 and 34 to connect the GPIO pins to the GPIO header.
 
 Likewise, if you want to enable I2C both on the GPIO header and the dedicated I2C connector, close the solder jumpers 16 and 17 on the board bottom layer.
