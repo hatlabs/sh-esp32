@@ -90,6 +90,12 @@ fixing a typo), the English source did not change: leave the stamp alone.
 
 ## Adding a language to the site
 
+`check-glossary` and `check-typography` accept a fixed set of locales, and those
+registries live in the `halos-docs-tools` package, not in this repository. A new
+locale needs an entry in each, a release of that package, and a bump of the pin
+in `pyproject.toml`. Until that lands both commands reject the locale, while
+`translation-status` reads `mkdocs.yml` and starts failing the gate immediately.
+
 When a locale is added to `mkdocs.yml`, check the language selector too. The
 Material theme caps the open menu at `10rem`, which fits five entries at the
 site's font size; the sixth language onward scrolls out of sight behind a
@@ -105,9 +111,9 @@ scrollbar that gives no hint anything is below it.
 ```
 
 24rem clears thirteen entries; the viewport term keeps the menu on screen on a
-short display. The same block is in the HALPI2 and HALMET repositories — keep
-the three identical, and add it to any further site that gains a second
-language.
+short display. The same block is in the HALPI2, HALMET, SH-RPi and SH-ESP32
+repositories — keep the four identical, and add it to any further site
+that gains a second language.
 
 Verify by measuring rather than by eye: open the site, read the rule's
 `max-height` off the stylesheet, and compare it against the list's natural
@@ -117,12 +123,12 @@ is captured.
 
 ## Verifying
 
-All four, every time:
+All five, every time:
 
 ```bash
 uv run mkdocs build --strict
 uv run check-anchors site
-uv run translation-status
+uv run translation-status --check
 uv run check-glossary fi
 uv run check-typography fi
 ```
