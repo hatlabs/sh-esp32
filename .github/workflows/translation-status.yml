@@ -24,5 +24,9 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
+  # The called workflow builds the site, checks its anchors, and fails the run
+  # when any translation is stale, missing, unstamped or orphaned. It judges the
+  # whole repository, not the diff, so an edit to an English page needs its
+  # translations re-stamped in the same pull request.
   translation-status:
     uses: halos-org/shared-workflows/.github/workflows/translation-status.yml@main
