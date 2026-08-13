@@ -1,95 +1,28 @@
 name: Translation Status
 
+# No paths filter. The gate is a property of the whole repository, not of a
+# diff, and a required check that never runs on a pull request touching none of
+# the filtered paths leaves that pull request unmergeable forever.
 on:
   pull_request:
-    paths:
-      - 'docs/**'
-      - 'mkdocs.yml'
-      - 'scripts/**'
   push:
     branches: [main]
   workflow_dispatch:
 
+# The called workflow inherits this token, so the comment needs
+# pull-requests: write here. Omit it and the run still gates; only the comment
+# is skipped.
 permissions:
   contents: read
   pull-requests: write
 
 concurrency:
   group: translation-status-${{ github.ref }}
-  cancel-in-progress: true
+  # Pull requests only. On push, github.ref is refs/heads/main for every merge,
+  # so cancelling lets one merge kill the run checking the one before it -- and
+  # a cancelled run is grey, not red, so nobody is told.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  status:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          # Full history: the report resolves the stamped blob to show the
-          # English diff since a translation was written.
-          fetch-depth: 0
-
-      - uses: astral-sh/setup-uv@v5
-      - run: uv sync
-
-      - name: Report translation status
-        run: |
-          # tee, not plain redirection: a report only in the job summary is
-          # invisible in the logs, which is where you look when it misbehaves.
-          uv run python scripts/translation_status.py --format markdown --diff \
-            | tee report.md
-          cat report.md >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Comment on the pull request
-        if: github.event_name == 'pull_request'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PR: ${{ github.event.number }}
-        run: |
-          # Only the English pages this PR actually touches. Which paths a PR
-          # touched is a fact, so a PR editing only translations says nothing.
-          pages=$(git diff --name-only \
-            "origin/${{ github.base_ref }}...HEAD" -- 'docs/en/**/*.md' \
-            | sed 's|^docs/en/||')
-          if [ -z "$pages" ]; then
-            echo "No English pages touched; nothing to report."
-            exit 0
-          fi
-
-          # shellcheck disable=SC2086
-          uv run python scripts/translation_status.py \
-            --format markdown --diff --only-pages $pages > comment.md
-          printf '\n<!-- translation-status -->\n' >> comment.md
-
-          existing=$(gh api "repos/${{ github.repository }}/issues/$PR/comments" \
-            --jq 'map(select(.body | contains("<!-- translation-status -->"))) | .[0].id // empty')
-          if [ -n "$existing" ]; then
-            gh api "repos/${{ github.repository }}/issues/comments/$existing" \
-              -X PATCH -F body=@comment.md --silent
-            echo "Updated comment $existing"
-          else
-            gh api "repos/${{ github.repository }}/issues/$PR/comments" \
-              -F body=@comment.md --silent
-            echo "Created comment"
-          fi
-
-      # Last, because unlike a stale translation a broken anchor is actual
-      # breakage and fails the run — and the report above must still be
-      # published when it does.
-      - name: Check anchors
-        run: |
-          uv run mkdocs build --strict
-          # PIPESTATUS, not $?: piping into tee would otherwise mask the
-          # checker's exit status behind tee's.
-          set +e
-          uv run python scripts/check_anchors.py site | tee anchors.txt
-          broken=${PIPESTATUS[0]}
-          set -e
-          {
-            echo ""
-            echo "## Anchor check"
-            echo ""
-            echo '```'
-            cat anchors.txt
-            echo '```'
-          } >> "$GITHUB_STEP_SUMMARY"
-          exit "$broken"
+  translation-status:
+    uses: halos-org/shared-workflows/.github/workflows/translation-status.yml@main

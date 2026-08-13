@@ -7,4 +7,5 @@ dependencies = [
     "mkdocs-material>=9.5",
     "click<8.3",
     "mkdocs-static-i18n>=1.2",
+    "halos-docs-tools @ git+https://github.com/halos-org/docs-tools@v0.1.0",
 ]

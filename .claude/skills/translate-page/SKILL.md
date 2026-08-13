@@ -11,7 +11,7 @@ exist because each of them was broken once and cost real work.
 ## Inputs
 
 - A page path under `docs/en/`, or a page reported by
-  `uv run python scripts/translation_status.py` as `missing` or `stale`.
+  `uv run translation-status` as `missing` or `stale`.
 - A target language directory, e.g. `docs/fi/`.
 
 ## Before translating
@@ -79,7 +79,7 @@ The stamp records the git blob hash of the English source the translation was
 written against. Write it with the helper, never by hand:
 
 ```bash
-uv run python scripts/stamp_translation.py docs/fi/hardware/index.md
+uv run stamp-translation docs/fi/hardware/index.md
 ```
 
 **Stamp only when you have actually translated.** A stamp updated without real
@@ -121,18 +121,18 @@ All four, every time:
 
 ```bash
 uv run mkdocs build --strict
-uv run python scripts/check_anchors.py site
-uv run python scripts/translation_status.py
-uv run python scripts/check_glossary.py fi
-uv run python scripts/check_typography.py fi
+uv run check-anchors site
+uv run translation-status
+uv run check-glossary fi
+uv run check-typography fi
 ```
 
 **Leave every anchor fragment in its English form while translating**, then map
 them all at once once the language is complete and the site has been built:
 
 ```bash
-uv run python scripts/map_anchors.py site fi          # report
-uv run python scripts/map_anchors.py site fi --apply  # rewrite
+uv run map-anchors site fi          # report
+uv run map-anchors site fi --apply  # rewrite
 ```
 
 The mapping is positional — the nth heading of the English page and the nth
@@ -144,7 +144,7 @@ the text is in another language.
 whatever they already say, so the terminology looks consistent right up until a
 reviewer finds the same connector under two names on adjacent pages. Every
 language so far shipped that mistake, and each time it landed on the last pages
-translated, once the glossary had stopped being opened. `check_glossary.py`
+translated, once the glossary had stopped being opened. `check-glossary`
 reports terms the glossary prescribes and the pages never use — the signature of
 a rival word having quietly taken over.
 
