@@ -157,6 +157,14 @@ wheels = [
 ]
 
 [[package]]
+name = "halos-docs-tools"
+version = "0.1.0"
+source = { git = "https://github.com/halos-org/docs-tools?rev=v0.1.0#7f09d05f54cf64184a7a4d7205c166bc49ec0f6e" }
+dependencies = [
+    { name = "pyyaml" },
+]
+
+[[package]]
 name = "idna"
 version = "3.11"
 source = { registry = "https://pypi.org/simple" }
@@ -508,6 +516,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "click" },
+    { name = "halos-docs-tools" },
     { name = "mkdocs-material" },
     { name = "mkdocs-static-i18n" },
 ]
@@ -515,6 +524,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "click", specifier = "<8.3" },
+    { name = "halos-docs-tools", git = "https://github.com/halos-org/docs-tools?rev=v0.1.0" },
     { name = "mkdocs-material", specifier = ">=9.5" },
     { name = "mkdocs-static-i18n", specifier = ">=1.2" },
 ]
