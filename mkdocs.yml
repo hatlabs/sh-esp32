@@ -66,6 +66,9 @@ plugins:
             Media Assets: Media-aineisto
             Acknowledgments: Kiitokset
 
+hooks:
+  - hooks/i18n_search.py
+
 markdown_extensions:
   - admonition
   - pymdownx.details
