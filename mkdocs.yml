@@ -9,7 +9,6 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
-  custom_dir: docs/overrides
   logo: assets/hat_labs_logo.svg
   favicon: assets/hat_labs_logo.svg
   palette:
@@ -65,9 +64,7 @@ plugins:
             Errata: Tunnetut virheet
             Media Assets: Media-aineisto
             Acknowledgments: Kiitokset
-
-hooks:
-  - hooks/i18n_search.py
+  - halos-i18n
 
 markdown_extensions:
   - admonition
