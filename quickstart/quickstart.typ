@@ -1,7 +1,9 @@
 // SH-ESP32 Quick Start Guide. README.md describes the sheet, the panel order
 // and the folding.
 
-#let version = "3.0.0"
+// The source revision, e.g. "2026-10-28 11299c7", which ./run passes in so a
+// printed guide can be traced to its source.
+#let revision = sys.inputs.at("revision", default: none)
 #let guides = sys.inputs.at("guides", default: "false") == "true"
 // Replaces every panel with its name and orientation markers, for checking
 // the duplex imposition.
@@ -121,7 +123,7 @@
     v(4mm)
     [Hat Labs Oy \ hatlabs.fi \ #email("info@hatlabs.fi")]
   })
-  place(bottom + right, text(size: 6pt)[v#version])
+  if revision != none { place(bottom + right, text(size: 6pt, revision)) }
 }
 
 #let f4 = {
