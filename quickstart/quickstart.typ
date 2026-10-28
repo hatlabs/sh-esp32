@@ -113,7 +113,7 @@
 
   The SH-ESP32 comes with a two year manufacturer warranty. If you think your device is defective, contact Hat Labs at #email("info@hatlabs.fi") and we will help you out.
 
-  Support for hardware and software development can only be provided via the discussion board linked in the next section.
+  Support for hardware and software development can only be provided via the discussion board listed under Links.
 
   = Declaration of Conformity
 
