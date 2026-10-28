@@ -1,0 +1,124 @@
+#!/usr/bin/env bash
+#
+# usage: ./run command [argument ...]
+#
+# Commands for building the SH-ESP32 Quick Start Guide.
+#
+
+set -o nounset
+set -o pipefail
+set -o errexit
+
+# Change the current directory to the project root.
+PROJECT_ROOT=${0%/*}
+if [[ $0 != $PROJECT_ROOT && $PROJECT_ROOT != "" ]]; then
+  cd "$PROJECT_ROOT"
+fi
+readonly PROJECT_ROOT=$(pwd)
+
+readonly SOURCE=quickstart.typ
+readonly BUILD_DIR=build
+readonly PREVIEW_DPI=150
+
+################################################################################
+# Helper Functions
+
+function typst-compile {
+  # Only the checked-in fonts are used, so the output does not depend on
+  # what happens to be installed on the build machine.
+  mkdir -p "$BUILD_DIR"
+  typst compile --font-path fonts --ignore-system-fonts "$@"
+}
+
+################################################################################
+# Build Commands
+
+function build {
+  #@ Build the print-ready PDF
+  #@ Category: Build
+  typst-compile "$SOURCE" "$BUILD_DIR/quickstart.pdf"
+  echo "Built $BUILD_DIR/quickstart.pdf"
+}
+
+function proof {
+  #@ Build a PDF with fold and cut lines drawn
+  #@ Category: Build
+  typst-compile --input guides=true "$SOURCE" "$BUILD_DIR/quickstart-proof.pdf"
+  echo "Built $BUILD_DIR/quickstart-proof.pdf"
+}
+
+function labels {
+  #@ Build a PDF with each panel replaced by its name and an UP arrow
+  #@ Category: Build
+  typst-compile --input labels=true "$SOURCE" "$BUILD_DIR/quickstart-labels.pdf"
+  echo "Built $BUILD_DIR/quickstart-labels.pdf"
+}
+
+function preview {
+  #@ Render one PNG per A4 side (front, back)
+  #@ Category: Build
+  typst-compile --format png --ppi "$PREVIEW_DPI" "$SOURCE" "$BUILD_DIR/quickstart-{p}.png"
+  echo "Built $BUILD_DIR/quickstart-1.png (front) and $BUILD_DIR/quickstart-2.png (back)"
+}
+
+################################################################################
+# Utility Commands
+
+function clean {
+  #@ Remove build artifacts
+  #@ Category: Utility
+  rm -rf "$BUILD_DIR"
+}
+
+################################################################################
+# Help System
+
+function help {
+  #@ Show this help message
+  #@ Category: Core
+  echo "SH-ESP32 Quick Start Guide - Commands"
+  echo "====================================="
+  echo ""
+  echo "Available commands:"
+  echo ""
+
+  # Extract function definitions and their help comments
+  awk '/^function / {
+    fname = $2
+    sub(/[({].*/, "", fname)
+    getline
+    if ($0 ~ /#@/) {
+      desc = $0
+      sub(/.*#@ /, "", desc)
+      sub(/ *$/, "", desc)
+      getline
+      if ($0 ~ /#@ Category:/) {
+        cat = $0
+        sub(/.*Category: /, "", cat)
+        sub(/ *$/, "", cat)
+        if (!seen[cat]++) categories[++cat_count] = cat
+        commands[cat, ++cmd_count[cat]] = fname
+        descriptions[cat, cmd_count[cat]] = desc
+      }
+    }
+  }
+  END {
+    for (i = 1; i <= cat_count; i++) {
+      cat = categories[i]
+      print "\n" cat ":"
+      for (j = 1; j <= cmd_count[cat]; j++) {
+        printf "  %-25s %s\n", commands[cat, j], descriptions[cat, j]
+      }
+    }
+  }' "$0"
+
+  echo ""
+  echo "Usage: ./run <command> [arguments...]"
+  echo ""
+}
+
+################################################################################
+# Commands end.
+
+TIMEFORMAT=$'\nTask completed in %3lR'
+time "${@:-help}"
