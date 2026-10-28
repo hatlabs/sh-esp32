@@ -43,7 +43,7 @@ On the A4 sheet each strip runs down the page. The front strip is turned counter
                ^ cut                        ^ cut
 ```
 
-Every panel is laid out on its own, so no sentence crosses a fold. Content stays at least 5 mm from every panel edge, which keeps it clear of the printer's unprintable border, the cut and the folds, and absorbs small duplex misregistration. The build fails if a panel's content does not fit.
+Every panel is laid out on its own, so no sentence crosses a fold. Content stays at least 6 mm from every panel edge, which keeps it clear of the printer's unprintable border, the cut and the folds, and absorbs small duplex misregistration. The build fails if a panel's content does not fit.
 
 ## Building
 
