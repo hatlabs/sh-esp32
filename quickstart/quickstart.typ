@@ -1,11 +1,5 @@
-// SH-ESP32 Quick Start Guide.
-//
-// An A4 sheet printed duplex (long-edge) holds two identical strips side by
-// side. Each strip is cut apart and double-parallel-folded into eight
-// 74.25 × 105 mm portrait panels. Read horizontally, a strip is 297 mm wide
-// and 105 mm tall; its front side carries F1–F4 left to right, with F4 as the
-// cover and F3 as the back cover. Turned over about its vertical axis, the
-// back side carries B1–B4 left to right, so B1 is behind F4 and B4 behind F1.
+// SH-ESP32 Quick Start Guide. README.md describes the sheet, the panel order
+// and the folding.
 
 #let version = "3.0.0"
 #let guides = sys.inputs.at("guides", default: "false") == "true"
@@ -14,9 +8,10 @@
 #let labels = sys.inputs.at("labels", default: "false") == "true"
 
 #let strip-length = 297mm
-#let strip-width = 105mm
-#let panel-width = strip-length / 4
-#let panel-height = strip-width
+#let strip-height = 105mm
+#let panel-count = 4
+#let panel-width = strip-length / panel-count
+#let panel-height = strip-height
 // Keeps content clear of the printer's unprintable edge, the centre cut and
 // the folds, with room for duplex misregistration.
 #let margin = 6mm
@@ -204,17 +199,18 @@
 // after turning it over, turned clockwise.
 #let side(angle, panels) = {
   let s = rotate(angle, reflow: true, strip(panels))
-  grid(columns: (strip-width, strip-width), s, s)
+  // Rotated, a strip is as wide on the sheet as it is tall when read.
+  grid(columns: (strip-height, strip-height), s, s)
 }
 
 #set page(foreground: if guides {
-  for k in range(1, 4) {
+  for k in range(1, panel-count) {
     place(top + left, dy: k * panel-width, line(
-      length: 2 * strip-width,
+      length: 2 * strip-height,
       stroke: (paint: guide-colour, thickness: 0.3pt, dash: "dashed"),
     ))
   }
-  place(top + left, dx: strip-width, line(
+  place(top + left, dx: strip-height, line(
     angle: 90deg,
     length: strip-length,
     stroke: 0.3pt + guide-colour,
