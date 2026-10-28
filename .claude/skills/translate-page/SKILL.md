@@ -11,7 +11,7 @@ exist because each of them was broken once and cost real work.
 ## Inputs
 
 - A page path under `docs/en/`, or a page reported by
-  `uv run python scripts/translation_status.py` as `missing` or `stale`.
+  `uv run translation-status` as `missing` or `stale`.
 - A target language directory, e.g. `docs/fi/`.
 
 ## Before translating
@@ -79,7 +79,7 @@ The stamp records the git blob hash of the English source the translation was
 written against. Write it with the helper, never by hand:
 
 ```bash
-uv run python scripts/stamp_translation.py docs/fi/hardware/index.md
+uv run stamp-translation docs/fi/hardware/index.md
 ```
 
 **Stamp only when you have actually translated.** A stamp updated without real
@@ -89,6 +89,12 @@ discipline lives. If you touched only the target language (fixing wording,
 fixing a typo), the English source did not change: leave the stamp alone.
 
 ## Adding a language to the site
+
+`check-glossary` and `check-typography` accept a fixed set of locales, and those
+registries live in the `halos-docs-tools` package, not in this repository. A new
+locale needs an entry in each, a release of that package, and a bump of the pin
+in `pyproject.toml`. Until that lands both commands reject the locale, while
+`translation-status` reads `mkdocs.yml` and starts failing the gate immediately.
 
 When a locale is added to `mkdocs.yml`, check the language selector too. The
 Material theme caps the open menu at `10rem`, which fits five entries at the
@@ -105,9 +111,9 @@ scrollbar that gives no hint anything is below it.
 ```
 
 24rem clears thirteen entries; the viewport term keeps the menu on screen on a
-short display. The same block is in the HALPI2 and HALMET repositories — keep
-the three identical, and add it to any further site that gains a second
-language.
+short display. The same block is in the HALPI2, HALMET, SH-RPi and SH-ESP32
+repositories — keep the four identical, and add it to any further site
+that gains a second language.
 
 Verify by measuring rather than by eye: open the site, read the rule's
 `max-height` off the stylesheet, and compare it against the list's natural
@@ -117,22 +123,22 @@ is captured.
 
 ## Verifying
 
-All four, every time:
+All five, every time:
 
 ```bash
 uv run mkdocs build --strict
-uv run python scripts/check_anchors.py site
-uv run python scripts/translation_status.py
-uv run python scripts/check_glossary.py fi
-uv run python scripts/check_typography.py fi
+uv run check-anchors site
+uv run translation-status --check
+uv run check-glossary fi
+uv run check-typography fi
 ```
 
 **Leave every anchor fragment in its English form while translating**, then map
 them all at once once the language is complete and the site has been built:
 
 ```bash
-uv run python scripts/map_anchors.py site fi          # report
-uv run python scripts/map_anchors.py site fi --apply  # rewrite
+uv run map-anchors site fi          # report
+uv run map-anchors site fi --apply  # rewrite
 ```
 
 The mapping is positional — the nth heading of the English page and the nth
@@ -144,7 +150,7 @@ the text is in another language.
 whatever they already say, so the terminology looks consistent right up until a
 reviewer finds the same connector under two names on adjacent pages. Every
 language so far shipped that mistake, and each time it landed on the last pages
-translated, once the glossary had stopped being opened. `check_glossary.py`
+translated, once the glossary had stopped being opened. `check-glossary`
 reports terms the glossary prescribes and the pages never use — the signature of
 a rival word having quietly taken over.
 

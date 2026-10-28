@@ -17,7 +17,7 @@ Copyright © 2021–2026 Hat Labs Oy.
 
 Everything in this repository is licensed under [Creative Commons Attribution 4.0 International](LICENSE) (CC BY 4.0), with these exceptions:
 
-- A directory that contains its own license file is licensed under that file. The scripts in [`scripts/`](scripts) are licensed under the [MIT License](scripts/LICENSE).
+- A directory that contains its own license file is licensed under that file.
 - Hardware design files reproduced here, such as schematic PDFs, are licensed under the license of the hardware design they come from. The SH-ESP32 schematics are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ### Trademarks
