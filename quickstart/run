@@ -26,8 +26,27 @@ readonly PREVIEW_DPI=150
 function typst-compile {
   # Only the checked-in fonts are used, so the output does not depend on
   # what happens to be installed on the build machine.
+  # A separate assignment, because errexit ignores a failed substitution
+  # inside a command's arguments.
+  local rev
+  rev="$(revision)"
   mkdir -p "$BUILD_DIR"
-  typst compile --font-path fonts --ignore-system-fonts "$@"
+  typst compile --font-path fonts --ignore-system-fonts \
+    --input revision="$rev" "$@"
+}
+
+# The last commit's date and short hash, marked when this directory has
+# uncommitted changes.
+function revision {
+  local stamp
+  stamp="$(git log -1 --format='%cs %h')" || {
+    echo "run: the revision stamp needs a git checkout" >&2
+    return 1
+  }
+  if [[ -n $(git status --porcelain -- .) ]]; then
+    stamp+="+dirty"
+  fi
+  echo "$stamp"
 }
 
 ################################################################################

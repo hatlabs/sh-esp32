@@ -43,7 +43,7 @@ On the A4 sheet each strip runs down the page. The front strip is turned counter
                ^ cut                        ^ cut
 ```
 
-Every panel is laid out on its own, so no sentence crosses a fold. Content stays at least 5 mm from every panel edge, which keeps it clear of the printer's unprintable border, the cut and the folds, and absorbs small duplex misregistration. The build fails if a panel's content does not fit.
+Every panel is laid out on its own, so no sentence crosses a fold. Content stays at least 6 mm from every panel edge, which keeps it clear of the printer's unprintable border, the cut and the folds, and absorbs small duplex misregistration. The build fails if a panel's content does not fit.
 
 ## Building
 
@@ -56,7 +56,7 @@ Requires Typst 0.15. The fonts in `fonts/` are the only ones used, so the output
 ./run preview   # build/quickstart-1.png (front) and build/quickstart-2.png (back)
 ```
 
-The document version is the `version` variable at the top of `quickstart.typ`.
+The back cover carries the source revision: the date and short hash of the last commit, with `+dirty` when `quickstart/` has uncommitted changes. `run` reads it from git and stops outside a git checkout; a bare `typst compile` leaves the stamp out.
 
 ## Printing
 
